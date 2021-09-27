@@ -1,0 +1,158 @@
+{
+    "combos": [
+        {
+            "id": 1,
+            "name": "Combo Hamburguesa",
+            "price": {
+                "currency": "USD",
+                "amount": 9.99
+            }
+        },
+        {
+            "id": 2,
+            "name": "Combo Hamburguesa Doble",
+            "price": {
+                "currency": "USD",
+                "amount": 10.99
+            }
+        },
+        {
+            "id": 3,
+            "name": "Combo Hamburguesa con queso",
+            "price": {
+                "currency": "USD",
+                "amount": 11.49
+            }
+        },
+        {
+            "id": 4,
+            "name": "Combo Hamburguesa doble con queso",
+            "price": {
+                "currency": "USD",
+                "amount": 15.49
+            }
+        }
+    ],
+    "hamburguesas": [
+        {
+            "id": 5,
+            "name": "Hamburguesa",
+            "price": {
+                "currency": "USD",
+                "amount": 6.25
+            }
+        },
+        {
+            "id": 6,
+            "name": "Hamburguesa Doble",
+            "price": {
+                "currency": "USD",
+                "amount": 8.49
+            }
+        },
+        {
+            "id": 7,
+            "name": "Hamburguesa con queso",
+            "price": {
+                "currency": "USD",
+                "amount": 9
+            }
+        },
+        {
+            "id": 8,
+            "name": "Hamburguesa doble con queso",
+            "price": {
+                "currency": "USD",
+                "amount": 13
+            }
+        }
+    ],
+    "papasFritas": [
+        {
+            "id": 9,
+            "name": "Chica",
+            "price": {
+                "currency": "USD",
+                "amount": 3.49
+            }
+        },
+        {
+            "id": 10,
+            "name": "Grande",
+            "price": {
+                "currency": "USD",
+                "amount": 5.75
+            }
+        }
+    ],
+    "refresco": [
+        {
+            "id": 9,
+            "name": "Chico",
+            "price": {
+                "currency": "USD",
+                "amount": 1.00
+            }
+        },
+        {
+            "id": 10,
+            "name": "Grande",
+            "price": {
+                "currency": "USD",
+                "amount": 1.75
+            }
+        }
+    ],
+    "toppings": [
+        {
+            "id": 1,
+            "name": "Mayonesa"
+        },
+        {
+            "id": 2,
+            "name": "Ketchup"
+        },
+        {
+            "id": 3,
+            "name": "Lechuga"
+        },
+        {
+            "id": 4,
+            "name": "Tomate"
+        },
+        {
+            "id": 5,
+            "name": "Pepinillos"
+        },
+        {
+            "id": 6,
+            "name": "Cebollas"
+        },
+        {
+            "id": 7,
+            "name": "Pan"
+        }
+    ],
+    "flavors": [
+        {
+            "id": 1,
+            "name": "Cola"
+        },
+        {
+            "id": 2,
+            "name": "Limon"
+        },
+        {
+            "id": 3,
+            "name": "Pomelo"
+        },
+        {
+            "id": 4,
+            "name": "Naranja"
+        },
+        {
+            "id": 5,
+            "name": "Agua"
+        }
+    ]
+}
