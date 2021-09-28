@@ -1,16 +1,21 @@
+import useFetchFakeApi from "../../hooks/useFetchFakeApi"
 import { Product } from "../../interfaces/Product"
 import { SectionList } from "../../interfaces/SectionList"
 import Card from "../Card"
 import { List, Logo, Image, Wrapper } from "./styles"
 
 interface Props {
-    data: SectionList;
+    link: string;
 }
 
 
-const Section: React.FC<Props> = ({ data }) => {
+const Section: React.FC<Props> = ({ link }) => {
+    
+    const API = "http://localhost:3001/"
 
-    const { logo, products } = data;
+    const datos: SectionList = useFetchFakeApi([], `${API}${link}`)
+
+    const { logo, products } = datos;
 
     return (
         <Wrapper>
@@ -19,6 +24,7 @@ const Section: React.FC<Props> = ({ data }) => {
             </Logo>
             <List>
                 {
+                    products?.length  &&
                     products.map((product: Product) => {
                         return (
                             <Card key={product.id} data={product} />
