@@ -3,3 +3,15 @@
   display: grid;
   grid-template-columns: 1fr;
 }
+
+.first-half{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF9EE;
+}
+
+.second-half{
+  display: flex;
+  flex-direction: column;
+  background-color: #E5E5E5;
+}

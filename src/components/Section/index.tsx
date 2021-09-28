@@ -1,19 +1,22 @@
 import { Product } from "../../interfaces/Product"
 import { SectionList } from "../../interfaces/SectionList"
 import Card from "../Card"
-import { List } from "./styles"
+import { List, Logo, Image, Wrapper } from "./styles"
 
 interface Props {
     data: SectionList;
 }
 
+
 const Section: React.FC<Props> = ({ data }) => {
 
     const { logo, products } = data;
-    console.log(`logo`, logo)
+
     return (
-        <>
-            {/*<Logo path={logo}/>*/}
+        <Wrapper>
+            <Logo>
+                <Image src={logo}/>
+            </Logo>
             <List>
                 {
                     products.map((product: Product) => {
@@ -22,9 +25,8 @@ const Section: React.FC<Props> = ({ data }) => {
                         )
                     })
                 }
-
             </List>
-        </>
+        </Wrapper>
     )
 }
 
