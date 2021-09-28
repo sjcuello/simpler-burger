@@ -52,12 +52,24 @@ function App() {
     <RecoilRoot>
       <div className="container">
         <div className="first-half">
-          <Banner />
-          <Section key="1" data={combosStatic} />
+          <div className="abajo">
+            <img className="imagen-izq" src="/assets/images/burger-background.svg" alt="" />
+            <img className="imagen" src="/assets/images/burger-background.svg" alt="" />
+          </div>
+          <div className="arriba">
+            <Banner />
+            <Section key="1" data={combosStatic} />
+          </div>
         </div>
         <div className="second-half">
-          <Section key="2" data={combosStatic} />
-          <Section key="3" data={combosStatic} />
+          <div className="abajo">
+            <img className="imagen-izq" src="/assets/images/burger-background.svg" alt="" />
+            <img className="imagen" src="/assets/images/burger-background.svg" alt="" />
+          </div>
+          <div className="arriba">
+            <Section key="2" data={combosStatic} />
+            <Section key="3" data={combosStatic} />
+          </div>
         </div>
 
       </div>
