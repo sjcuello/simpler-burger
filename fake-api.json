@@ -1,108 +1,110 @@
 {
-    "combos": [
-        {
-            "id": 1,
-            "name": "Combo Hamburguesa",
-            "price": {
-                "currency": "USD",
-                "amount": 9.99
+    "combos": {
+        "id": 1,
+        "products": [
+            {
+                "id": 1,
+                "name": "Combo Hamburguesa",
+                "image": "assets/images/burger.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 9.99
+                }
+            },
+            {
+                "id": 2,
+                "name": "Combo Hamburguesa Doble",
+                "image": "assets/images/double-burger.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 10.99
+                }
+            },
+            {
+                "id": 3,
+                "name": "Combo Hamburguesa con queso",
+                "image": "assets/images/burger-cheese.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 11.49
+                }
+            },
+            {
+                "id": 4,
+                "name": "Combo Hamburguesa doble con queso",
+                "image": "assets/images/double-burger-cheese.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 15.49
+                }
             }
-        },
-        {
-            "id": 2,
-            "name": "Combo Hamburguesa Doble",
-            "price": {
-                "currency": "USD",
-                "amount": 10.99
+        ],
+        "logo": "assets/logos/combo.svg"
+    },
+    "burgers": {
+        "id": 2,
+        "products": [
+            {
+                "id": 5,
+                "name": "Hamburguesa",
+                "image": "assets/images/burger.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 6.25
+                }
+            },
+            {
+                "id": 6,
+                "name": "Hamburguesa Doble",
+                "image": "assets/images/double-burger.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 8.49
+                }
+            },
+            {
+                "id": 7,
+                "name": "Hamburguesa con queso",
+                "image": "assets/images/burger-cheese.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 9
+                }
+            },
+            {
+                "id": 8,
+                "name": "Hamburguesa doble con queso",
+                "image": "assets/images/double-burger-cheese.svg",
+                "price": {
+                    "currency": "USD",
+                    "amount": 13
+                }
             }
-        },
-        {
-            "id": 3,
-            "name": "Combo Hamburguesa con queso",
-            "price": {
-                "currency": "USD",
-                "amount": 11.49
+        ],
+        "logo": "assets/logos/burgers.svg"
+    },
+    "others": {
+        "id": 3,
+        "products": [
+            {
+                "id": 9,
+                "name": "Fries",
+                "price": {
+                    "currency": "USD",
+                    "amount": 3.49
+                }
+            },
+            {
+                "id": 10,
+                "name": "Soda",
+                "price": {
+                    "currency": "USD",
+                    "amount": 1.00
+                }
             }
-        },
-        {
-            "id": 4,
-            "name": "Combo Hamburguesa doble con queso",
-            "price": {
-                "currency": "USD",
-                "amount": 15.49
-            }
-        }
-    ],
-    "hamburguesas": [
-        {
-            "id": 5,
-            "name": "Hamburguesa",
-            "price": {
-                "currency": "USD",
-                "amount": 6.25
-            }
-        },
-        {
-            "id": 6,
-            "name": "Hamburguesa Doble",
-            "price": {
-                "currency": "USD",
-                "amount": 8.49
-            }
-        },
-        {
-            "id": 7,
-            "name": "Hamburguesa con queso",
-            "price": {
-                "currency": "USD",
-                "amount": 9
-            }
-        },
-        {
-            "id": 8,
-            "name": "Hamburguesa doble con queso",
-            "price": {
-                "currency": "USD",
-                "amount": 13
-            }
-        }
-    ],
-    "papasFritas": [
-        {
-            "id": 9,
-            "name": "Chica",
-            "price": {
-                "currency": "USD",
-                "amount": 3.49
-            }
-        },
-        {
-            "id": 10,
-            "name": "Grande",
-            "price": {
-                "currency": "USD",
-                "amount": 5.75
-            }
-        }
-    ],
-    "refresco": [
-        {
-            "id": 9,
-            "name": "Chico",
-            "price": {
-                "currency": "USD",
-                "amount": 1.00
-            }
-        },
-        {
-            "id": 10,
-            "name": "Grande",
-            "price": {
-                "currency": "USD",
-                "amount": 1.75
-            }
-        }
-    ],
+        ],
+        "logo": "assets/logos/others.svg"
+    },
     "toppings": [
         {
             "id": 1,

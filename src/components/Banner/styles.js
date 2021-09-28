@@ -9,5 +9,5 @@ export const Wraper = styled.div`
     max-width: 100%;
     max-height: 100%;
     height: 25rem;
-    border-radius: 40px;
+    border-radius: 0 0 40px 40px;
 `

@@ -1,23 +1,30 @@
 import { Product } from "../../interfaces/Product"
-import { Card, List } from "./styles"
+import { SectionList } from "../../interfaces/SectionList"
+import Card from "../Card"
+import { List } from "./styles"
 
 interface Props {
-    data: Product[];
+    data: SectionList;
 }
 
 const Section: React.FC<Props> = ({ data }) => {
-    return (
-        <List>
-            {
-                data.map(item => {
-                    return (
-                        <Card>
-                        </Card>
-                    )
-                })
-            }
 
-        </List>
+    const { logo, products } = data;
+    console.log(`logo`, logo)
+    return (
+        <>
+            {/*<Logo path={logo}/>*/}
+            <List>
+                {
+                    products.map((product: Product) => {
+                        return (
+                            <Card key={product.id} data={product} />
+                        )
+                    })
+                }
+
+            </List>
+        </>
     )
 }
 
