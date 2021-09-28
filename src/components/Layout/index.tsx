@@ -1,6 +1,3 @@
-
-import useFetchFakeApi from '../../hooks/useFetchFakeApi';
-import { SectionList } from '../../interfaces/SectionList';
 import Banner from '../Banner';
 import Half from '../Half';
 import Section from '../Section';
