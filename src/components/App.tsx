@@ -1,8 +1,8 @@
 import { RecoilRoot } from 'recoil';
-import './App.css';
-import Banner from './components/Banner';
-import Section from './components/Section';
-import { SectionList } from './interfaces/SectionList';
+import Banner from './Banner';
+import Section from './Section';
+import { SectionList } from '../interfaces/SectionList';
+import { Container, Behind, BurgerBG, Front, Half } from './styles';
 
 const combosStatic: SectionList = {
   "id": 1,
@@ -48,31 +48,33 @@ const combosStatic: SectionList = {
 }
 
 function App() {
+
   return (
     <RecoilRoot>
-      <div className="container">
-        <div className="first-half">
-          <div className="abajo">
-            <img className="imagen-izq" src="/assets/images/burger-background.svg" alt="" />
-            <img className="imagen" src="/assets/images/burger-background.svg" alt="" />
-          </div>
-          <div className="arriba">
+      <Container>
+        <Half colorFill={true}>
+          <Behind>
+            <BurgerBG rotate={true} />
+            <BurgerBG />
+          </Behind>
+          <Front>
             <Banner />
-            <Section key="1" data={combosStatic} />
-          </div>
-        </div>
-        <div className="second-half">
-          <div className="abajo">
-            <img className="imagen-izq" src="/assets/images/burger-background.svg" alt="" />
-            <img className="imagen" src="/assets/images/burger-background.svg" alt="" />
-          </div>
-          <div className="arriba">
+            <Section data={combosStatic} />
+          </Front>
+        </Half>
+        <Half>
+          <Behind>
+            <BurgerBG rotate={true} />
+            <BurgerBG />
+          </Behind>
+          <Front>
             <Section key="2" data={combosStatic} />
             <Section key="3" data={combosStatic} />
-          </div>
-        </div>
+          </Front>
+        </Half>
 
-      </div>
+      </Container>
+
     </RecoilRoot>
   );
 }
