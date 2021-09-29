@@ -4,7 +4,8 @@
         "products": [
             {
                 "id": 1,
-                "name": "Combo Hamburguesa",
+                "title": "Combo Burger",
+                "subtitle": "Simple but jucy burger. Choose your toppings.",
                 "image": "assets/images/burger.svg",
                 "price": {
                     "currency": "USD",
@@ -13,7 +14,8 @@
             },
             {
                 "id": 2,
-                "name": "Combo Hamburguesa Doble",
+                "title": "Combo Double Burger",
+                "subtitle": "Double jucy delicious burger. Choose your toppings.",
                 "image": "assets/images/double-burger.svg",
                 "price": {
                     "currency": "USD",
@@ -22,7 +24,8 @@
             },
             {
                 "id": 3,
-                "name": "Combo Hamburguesa con queso",
+                "title": "Combo Burger + Cheese",
+                "subtitle": "What’s a burger without cheese? Choose your toppings.",
                 "image": "assets/images/burger-cheese.svg",
                 "price": {
                     "currency": "USD",
@@ -31,7 +34,8 @@
             },
             {
                 "id": 4,
-                "name": "Combo Hamburguesa doble con queso",
+                "title": "Combo Double + Cheese",
+                "subtitle": "What’s a burger without melted delicious DOUBLE cheese?",
                 "image": "assets/images/double-burger-cheese.svg",
                 "price": {
                     "currency": "USD",
@@ -46,7 +50,8 @@
         "products": [
             {
                 "id": 5,
-                "name": "Hamburguesa",
+                "title": "Burger",
+                "subtitle": "Simple but jucy burger. Choose your toppings.",
                 "image": "assets/images/burger.svg",
                 "price": {
                     "currency": "USD",
@@ -55,7 +60,8 @@
             },
             {
                 "id": 6,
-                "name": "Hamburguesa Doble",
+                "title": "Double Burger",
+                "subtitle": "Double jucy delicious burger. Choose your toppings.",
                 "image": "assets/images/double-burger.svg",
                 "price": {
                     "currency": "USD",
@@ -64,7 +70,8 @@
             },
             {
                 "id": 7,
-                "name": "Hamburguesa con queso",
+                "title": "Burger + Cheese",
+                "subtitle": "What’s a burger without cheese? Choose your toppings.",
                 "image": "assets/images/burger-cheese.svg",
                 "price": {
                     "currency": "USD",
@@ -73,7 +80,8 @@
             },
             {
                 "id": 8,
-                "name": "Hamburguesa doble con queso",
+                "title": "Double Burger + Cheese",
+                "subtitle": "What’s a burger without melted delicious DOUBLE cheese?",
                 "image": "assets/images/double-burger-cheese.svg",
                 "price": {
                     "currency": "USD",
@@ -88,7 +96,9 @@
         "products": [
             {
                 "id": 9,
-                "name": "Fries",
+                "title": "Fries",
+                "subtitle": "Crunchy unique fries.",
+                "image": "assets/images/fries.svg",
                 "price": {
                     "currency": "USD",
                     "amount": 3.49
@@ -96,7 +106,9 @@
             },
             {
                 "id": 10,
-                "name": "Soda",
+                "title": "Soda",
+                "subtitle": "Accompany your burger with a soda.",
+                "image": "assets/images/soda.svg",
                 "price": {
                     "currency": "USD",
                     "amount": 1.00
@@ -108,53 +120,53 @@
     "toppings": [
         {
             "id": 1,
-            "name": "Mayonesa"
+            "title": "Mayonesa"
         },
         {
             "id": 2,
-            "name": "Ketchup"
+            "title": "Ketchup"
         },
         {
             "id": 3,
-            "name": "Lechuga"
+            "title": "Lechuga"
         },
         {
             "id": 4,
-            "name": "Tomate"
+            "title": "Tomate"
         },
         {
             "id": 5,
-            "name": "Pepinillos"
+            "title": "Pepinillos"
         },
         {
             "id": 6,
-            "name": "Cebollas"
+            "title": "Cebollas"
         },
         {
             "id": 7,
-            "name": "Pan"
+            "title": "Pan"
         }
     ],
     "flavors": [
         {
             "id": 1,
-            "name": "Cola"
+            "title": "Cola"
         },
         {
             "id": 2,
-            "name": "Limon"
+            "title": "Limon"
         },
         {
             "id": 3,
-            "name": "Pomelo"
+            "title": "Pomelo"
         },
         {
             "id": 4,
-            "name": "Naranja"
+            "title": "Naranja"
         },
         {
             "id": 5,
-            "name": "Agua"
+            "title": "Agua"
         }
     ]
 }

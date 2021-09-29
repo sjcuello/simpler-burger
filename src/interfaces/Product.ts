@@ -2,7 +2,8 @@ import { Money } from './Money';
 
 export interface Product {
     id: number;
-    name: string;
+    title: string;
+    subtitle: string;
     image: string;
     price: Money;
 }
