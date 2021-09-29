@@ -1,5 +1,6 @@
 import Banner from '../Banner';
-import Half from '../Half';
+import Footer from '../Footer';
+import Chunk from '../Chunk';
 import Section from '../Section';
 import { Container } from './styles'
 
@@ -7,16 +8,17 @@ const Layout = () => {
 
     return (
         <Container>
-            <Half colorfill={true}>
+            <Chunk colorfill={true}>
                 <Banner />
                 <Section link="combos" />
-            </Half>
-            <Half>
+            </Chunk>
+            <Chunk>
                 <Section link="burgers" />
-            </Half>
-            <Half>
+            </Chunk>
+            <Chunk removeBackground={true}>
                 <Section link="others" />
-            </Half>
+            </Chunk>
+            <Footer/>
         </Container>
     );
 }

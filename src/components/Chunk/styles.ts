@@ -4,10 +4,14 @@ import burgerBg from '../../assets/images/burger-background.svg';
 interface BurgerGBProps {
     rotateImg?: boolean
 }
-
 interface HalfProps {
     colorFill?: boolean
 }
+
+interface BehindProps  {
+    backgroundFill?: boolean
+}
+
 
 export const Wrapper = styled.div`
     display: flex;
@@ -17,7 +21,7 @@ export const Wrapper = styled.div`
 `
 
 export const Behind = styled.div`
-    display: flex;
+    display: ${(props: BehindProps) => (props.backgroundFill ? "none" : "flex" )};
     flex-direction: row;
     position: absolute;
 `

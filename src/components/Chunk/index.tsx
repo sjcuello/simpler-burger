@@ -1,14 +1,15 @@
 import { Wrapper, Behind, BurgerBG, Front } from './styles'
 
 interface Props {
-    colorfill?: boolean
+    colorfill?: boolean,
+    removeBackground?: boolean;
 }
 
-const Half: React.FC<Props> = ({ colorfill, children }) => {
+const Chunk: React.FC<Props> = ({ colorfill, removeBackground, children }) => {
 
     return (
         <Wrapper colorFill={colorfill}>
-            <Behind>
+            <Behind backgroundFill={removeBackground}>
                 <BurgerBG rotateImg={true} />
                 <BurgerBG />
             </Behind>
@@ -19,4 +20,4 @@ const Half: React.FC<Props> = ({ colorfill, children }) => {
     );
 }
 
-export default Half;
+export default Chunk;
