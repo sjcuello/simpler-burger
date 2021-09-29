@@ -1,4 +1,5 @@
-import {  Wraper, Logo } from "./styles"
+import {  Wraper } from "./styles"
+import { Logo } from "../globalStyles"
 
 const Footer = () => {
     return(

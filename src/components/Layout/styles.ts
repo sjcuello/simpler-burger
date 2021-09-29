@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerLayout = styled.div`
     text-align: center;
     display: grid;
     grid-template-columns: 1fr;

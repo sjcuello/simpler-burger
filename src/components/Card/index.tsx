@@ -1,5 +1,6 @@
 import { Product } from "../../interfaces/Product"
-import { Wraper, Image, Title, Data, SubTitle, Buttons, Button, Sign, Cart } from "./styles"
+import { Sign } from "../globalStyles"
+import { Wraper, Image, Title, Data, SubTitle, Buttons, Button, Cart } from "./styles"
 interface Props {
     data: Product;
 }

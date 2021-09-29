@@ -64,10 +64,6 @@ export const Button = styled.button`
     justify-content: center;
 `
 
-export const Sign = styled.p`
-    color: #8E8E9A;
-    margin-right: .125rem;
-`
 export const Cart = styled.img.attrs(() => ({
     src: cart
   }))`

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import logo from '../../assets/logos/logo.svg'
 
 export const Wraper = styled.div`
     background-color: #000000;
@@ -11,11 +10,3 @@ export const Wraper = styled.div`
     justify-content: center;
     align-items: center;
 `
-
-export const Logo = styled.img.attrs(() => ({
-    src: logo
-  }))`
-  width: 10rem;
-  height: 5rem;
-  margin-right: .125rem;
-` 

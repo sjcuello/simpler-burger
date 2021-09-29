@@ -2,12 +2,12 @@ import Banner from '../Banner';
 import Footer from '../Footer';
 import Chunk from '../Chunk';
 import Section from '../Section';
-import { Container } from './styles'
+import { ContainerLayout } from './styles'
 
 const Layout = () => {
 
     return (
-        <Container>
+        <ContainerLayout>
             <Chunk colorfill={true}>
                 <Banner />
                 <Section link="combos" />
@@ -19,7 +19,7 @@ const Layout = () => {
                 <Section link="others" />
             </Chunk>
             <Footer/>
-        </Container>
+        </ContainerLayout>
     );
 }
 
