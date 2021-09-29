@@ -56,6 +56,7 @@ export const Button = styled.button`
 
 export const Text = styled.p`
     display: flex;
+    cursor: pointer;
     flex: ${(props: TextProps) => (props.flexItem || 1)};
     justify-content: right;
     align-items: center;

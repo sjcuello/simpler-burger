@@ -53,6 +53,7 @@ export const Button = styled.button`
     border-radius: 3px;
     border: none;
     color: ${(props: ButtonProps) => (props.enabled ? "#FFFFFF" : "#000000")};
+    cursor: ${(props: ButtonProps) => (props.enabled ? "pointer" : "default")};
     height: 2rem;
     width: 7rem;
     font-style: normal;
