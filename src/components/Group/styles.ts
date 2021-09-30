@@ -8,7 +8,7 @@ export const ComboGroup = styled.div`
     height: 100%;
 `
 
-export const ComboSection = styled.div`
+export const ComboTop = styled.div`
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr 2fr;
@@ -22,34 +22,12 @@ export const Divider = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.12);
 `
 
-interface FormProps  {
-    column?: boolean
-}
-export const Form = styled.form`
-    display: grid;
-    grid-auto-rows: 2rem;
-    grid-template-columns: ${(props: FormProps)=>(props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
-    align-items: start;
-`
 export const TitleSection = styled.h1`
     display: flex;
     font-style: normal;
     font-weight: 500;
     font-size: 1rem;
     line-height: 1rem;
-    color: #000000;
-`
-
-export const ItemSection = styled.p`
-    display: flex;
-    justify-content: flex-start;
-    align-items: end;
-    margin: .5rem 0;
-    font-style: normal;
-    font-weight: normal;
-    font-size: .75rem;
-    line-height: .75rem;
-    width: 100%;
     color: #000000;
 `
 
@@ -83,18 +61,4 @@ export const SodasOrder = styled.div`
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
-`
-
-
-export const RadioButton = styled.input.attrs({
-    type: "radio",
-})`
-    cursor: pointer;
-    filter: hue-rotate(159deg);
-`
-export const Checkbox = styled.input.attrs({
-    type: "checkbox",
-})`
-    cursor: pointer;
-    filter: hue-rotate(159deg);
 `

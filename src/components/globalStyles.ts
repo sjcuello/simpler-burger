@@ -14,6 +14,11 @@ interface ContainerProps {
     borderRadiusBLeft?: number;
 }
 
+interface FormProps  {
+    column?: boolean
+}
+
+
 export const Container = styled.div`
     display: flex;
     text-align: center;
@@ -49,4 +54,30 @@ export const Logo = styled.img.attrs(() => ({
   }))`
   width: 10rem;
   height: 5rem;
+`
+
+export const Form = styled.form`
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-template-columns: ${(props: FormProps)=>(props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
+    align-items: start;
+`
+
+export const ItemSection = styled.p`
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    margin: .5rem 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    line-height: .75rem;
+    width: 100%;
+    color: #000000;
+`
+
+export const Divider = styled.div`
+    align-self: center;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 `
