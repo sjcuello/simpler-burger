@@ -24,7 +24,7 @@ export const ButtonTemplate = styled.button`
     color: #000000;
 `
 
-export const Text = styled.p`
+export const Text = styled.span`
     display: flex;
     cursor: pointer;
     flex: ${(props: TextProps) => (props.flexItem || 1)};

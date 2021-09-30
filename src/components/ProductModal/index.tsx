@@ -1,9 +1,12 @@
 import { useState } from "react"
+import { useRecoilState} from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
+
+import { cart } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 
 
@@ -21,7 +24,14 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         setActive(!active)
     }
 
-    const addCart = () => console.log(`Toggle add cart!`)
+    const [items, setItems] = useRecoilState(cart)
+
+    const addCart = () => {
+
+        setItems([...items, data])
+        console.log(`Toggle add cart!`)
+        toggle()
+    }
 
     return (
         <Modal active={active} toggle={toggle}>
@@ -39,9 +49,9 @@ const ProductModal: React.FC<Props> = ({ data }) => {
                     <Group />
                 </ProductSection>
                 <ProductSection>
-                    <Button 
-                        text="Add to my order" 
-                        price={price.amount} 
+                    <Button
+                        text="Add to my order"
+                        price={price.amount}
                         toggle={addCart}
                         color="#5AD88C"
                     >

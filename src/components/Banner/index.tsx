@@ -1,10 +1,20 @@
+import { useRecoilState } from "recoil"
+import { cart } from "../../recoil/atoms"
 import Button from "../Button"
 import { Logo, Container, Bag } from "../globalStyles"
 import { Image, Top, Wraper } from "./styles"
 
 const Banner = () => {
-
-    const toggle = () => console.log("Toggle!")
+    
+    const [cartState, setCartState] = useRecoilState(cart)
+    const toggle = () => {
+        console.log(`cartState`, cartState)
+        console.log("Toggle!")
+        setTimeout(() => {
+            setCartState([])
+            console.log(`carrito borrado`)
+        }, 4000);
+    }
 
     return (
         <Wraper>

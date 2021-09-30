@@ -46,7 +46,7 @@ export const Title = styled.h1`
     color: #000000;
 `
 
-export const Sign = styled.p`
+export const Sign = styled.span`
     color: #8E8E9A;
     margin-right: .125rem;
 `
@@ -65,7 +65,7 @@ export const Form = styled.form`
     align-items: start;
 `
 
-export const ItemSection = styled.p`
+export const ItemSection = styled.span`
     display: flex;
     justify-content: flex-start;
     align-items: end;
