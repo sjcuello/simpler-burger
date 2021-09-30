@@ -1,16 +1,7 @@
 import { Logo, Container, Sign } from "../globalStyles"
 import { Image, Top, Wraper, Button, Bag, Text } from "./styles"
-import { useState } from "react"
-import ProductModal from "../ProductModal"
 
 const Banner = () => {
-
-    const [state, setstate] = useState(false)
-
-    const changeState = () => {
-        setstate(!state)
-        console.log(`state`, state)
-    }
 
     return (
         <Wraper>
@@ -30,7 +21,7 @@ const Banner = () => {
                         borderRadiusBRigth={10}
                         borderRadiusBLeft={10}
                     >
-                        <Button onClick={() => changeState() }>
+                        <Button onClick={() => {console.log("cart!")} }>
                             <Bag />
                             <Text flexItem={1.5}>
                                 View order
@@ -44,9 +35,6 @@ const Banner = () => {
                 </Container>
             </Top>
             <Image />
-            {
-                state && <ProductModal></ProductModal>
-            }
         </Wraper>
     )
 }

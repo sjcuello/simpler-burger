@@ -18,20 +18,6 @@ export const Wraper = styled.div`
                 0px 3px 6px rgba(0, 0, 0, 0.04);
 `
 
-export const Data = styled.div`
-`
-
-export const Title = styled.h1`
-    margin: .5rem 1rem .5rem 1rem;
-    text-align: start;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #000000;
-`
-
-
 export const SubTitle = styled.h2`
     margin: .5rem 1rem 0 1rem;
     text-align: start;

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Product } from "../../interfaces/Product"
-import { Sign } from "../globalStyles"
+import { Container, Sign, Title } from "../globalStyles"
 import ProductModal from "../ProductModal"
-import { Wraper, Image, Title, Data, SubTitle, Buttons, Button, Cart } from "./styles"
+import { Wraper, Image, SubTitle, Buttons, Button, Cart } from "./styles"
 interface Props {
     data: Product;
 }
@@ -19,14 +19,14 @@ const Card: React.FC<Props> = ({ data }) => {
     return(
         <Wraper>
             <Image src={image}/>
-            <Data>
+            <Container>
                 <Title>
                     {title}
                 </Title>
                 <SubTitle>
                     {subtitle}
                 </SubTitle>
-            </Data> 
+            </Container> 
             <Buttons>
                 <Button>
                     <Sign>{price.currency}</Sign>
@@ -38,7 +38,7 @@ const Card: React.FC<Props> = ({ data }) => {
                 </Button>
             </Buttons>
             {
-                state && <ProductModal></ProductModal>
+                state && <ProductModal data={data}></ProductModal>
             }
         </Wraper>
         

@@ -29,6 +29,16 @@ export const Container = styled.div`
     border-bottom-left-radius: ${(props: ContainerProps) => (props.borderRadiusBLeft ? `${props.borderRadiusBLeft}px` : 0)};
 `
 
+export const Title = styled.h1`
+    margin: .5rem 1rem .5rem 1rem;
+    text-align: start;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #000000;
+`
+
 export const Sign = styled.p`
     color: #8E8E9A;
     margin-right: .125rem;

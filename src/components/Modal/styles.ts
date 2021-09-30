@@ -22,7 +22,7 @@ export const Window = styled.div`
     z-index: 1;
     min-width: 320px;
     min-height: 320px;
-    background-color: blue;
+    background-color: transparent;
 `
 export const CloseButton = styled.button`
     background: grey;

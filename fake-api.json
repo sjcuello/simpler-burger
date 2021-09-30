@@ -168,5 +168,17 @@
             "id": 5,
             "title": "Agua"
         }
+    ],
+    "sizes": [
+        {
+            "id": 1,
+            "title": "Small",
+            "value": 0
+        },
+        {
+            "id": 2,
+            "title": "Big (+USD2.00)",
+            "value": 2
+        }
     ]
 }
