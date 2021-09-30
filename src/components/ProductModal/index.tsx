@@ -16,7 +16,7 @@ interface Props {
 
 const ProductModal: React.FC<Props> = ({ data }) => {
 
-    const { title, subtitle, image, price } = data
+    const { title, subtitle, image, price, additions } = data
 
     const [active, setActive] = useState(true)
 
@@ -46,7 +46,7 @@ const ProductModal: React.FC<Props> = ({ data }) => {
                     </SubTitle>
                 </ProductSection>
                 <ProductSection>
-                    <Group />
+                    <Group additions={additions}/>
                 </ProductSection>
                 <ProductSection>
                     <Button

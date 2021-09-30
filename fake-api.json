@@ -10,6 +10,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 9.99
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": true,
+                    "toppings": true
                 }
             },
             {
@@ -20,6 +25,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 10.99
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": true,
+                    "toppings": true
                 }
             },
             {
@@ -30,6 +40,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 11.49
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": true,
+                    "toppings": true
                 }
             },
             {
@@ -40,6 +55,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 15.49
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": true,
+                    "toppings": true
                 }
             }
         ],
@@ -56,6 +76,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 6.25
+                },
+                "additions": {
+                    "sizes": false,
+                    "flavours": false,
+                    "toppings": true
                 }
             },
             {
@@ -66,6 +91,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 8.49
+                },
+                "additions": {
+                    "sizes": false,
+                    "flavours": false,
+                    "toppings": true
                 }
             },
             {
@@ -76,6 +106,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 9
+                },
+                "additions": {
+                    "sizes": false,
+                    "flavours": false,
+                    "toppings": true
                 }
             },
             {
@@ -86,6 +121,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 13
+                },
+                "additions": {
+                    "sizes": false,
+                    "flavours": false,
+                    "toppings": true
                 }
             }
         ],
@@ -102,6 +142,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 3.49
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": false,
+                    "toppings": false
                 }
             },
             {
@@ -112,6 +157,11 @@
                 "price": {
                     "currency": "USD",
                     "amount": 1.00
+                },
+                "additions": {
+                    "sizes": true,
+                    "flavours": true,
+                    "toppings": false
                 }
             }
         ],

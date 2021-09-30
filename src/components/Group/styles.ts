@@ -1,9 +1,13 @@
 import styled from "styled-components"
 
+interface ComboGroupProps {
+    sections: number
+}
+
 export const ComboGroup = styled.div`
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: ${(props: ComboGroupProps) => (props.sections > 1 ? "1fr 1fr" : "1fr")};
     width: 100%;
     height: 100%;
 `

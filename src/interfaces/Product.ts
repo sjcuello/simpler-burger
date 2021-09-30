@@ -1,3 +1,5 @@
+
+import { Additions } from './Additions';
 import { Money } from './Money';
 
 export interface Product {
@@ -6,4 +8,5 @@ export interface Product {
     subtitle: string;
     image: string;
     price: Money;
+    additions: Additions;
 }

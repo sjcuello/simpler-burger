@@ -1,12 +1,15 @@
 import useFetchFakeApi from "../../hooks/useFetchFakeApi";
+import { Additions } from "../../interfaces/Additions";
 import { Item } from "../../interfaces/Item";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
 import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
 
+interface Props {
+    additions: Additions
+}
 
-
-const Group: React.FC = () => {
+const Group: React.FC<Props> = ({ additions }) => {
 
     const API = "http://localhost:3001/"
 
@@ -16,25 +19,44 @@ const Group: React.FC = () => {
 
     const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
 
+    const sections = ():number => {
+        const first = (additions.sizes || additions.flavours) ? 1 : 0
+        const second = additions.toppings ? 1 : 0
+        return first + second
+    }
+
     return (
-        <ComboGroup>
-            <ComboTop>
-                <SizeOrder>
-                    <TitleSection>Size</TitleSection>
+        <ComboGroup sections={sections()}>
+            {
+                (additions.sizes || additions.flavours) &&
+                <ComboTop>
+                    {
+                        additions.sizes &&
+                        <SizeOrder>
+                            <TitleSection>Size</TitleSection>
+                            <Divider></Divider>
+                            <RadioButtonForm list={sizes} />
+                        </SizeOrder>
+                    }
+                    {
+                        additions.flavours &&
+                        <SodasOrder>
+                            <TitleSection>Sodas flavours</TitleSection>
+                            <Divider></Divider>
+                            <RadioButtonForm list={flavours} column={true} />
+                        </SodasOrder>
+                    }
+
+                </ComboTop>
+            }
+            {
+                additions.toppings &&
+                <ToppingsSection>
+                    <TitleSection>Toppings</TitleSection>
                     <Divider></Divider>
-                    <RadioButtonForm list={sizes}/>
-                </SizeOrder>
-                <SodasOrder>
-                    <TitleSection>Sodas flavours</TitleSection>
-                    <Divider></Divider>
-                    <RadioButtonForm list={flavours} column={true}/>
-                </SodasOrder>
-            </ComboTop>
-            <ToppingsSection>
-                <TitleSection>Toppings</TitleSection>
-                <Divider></Divider>
-                <CheckboxForm list={toppings} column={true}/>
-            </ToppingsSection>
+                    <CheckboxForm list={toppings} column={true} />
+                </ToppingsSection>
+            }
         </ComboGroup>
 
 

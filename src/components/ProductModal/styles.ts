@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    height: 45rem;
+    height: 34rem;
+    max-height: 45rem;
     width: 36rem;
     display: grid;
     grid-auto-flow: row;
     grid-template-rows: 1.5fr 1fr .25fr;
     row-gap: 1rem;
+    margin-bottom: 15%;
 `
 
 export const SubTitle = styled.h2`
