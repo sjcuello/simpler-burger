@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { Product } from "../../interfaces/Product"
-import { Title } from "../globalStyles"
+import Button from "../Button"
+import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
-import { Wrapper, Image, SubTitle, ProductSection} from "./styles"
+import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 
 
 interface Props {
@@ -20,6 +21,8 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         setActive(!active)
     }
 
+    const addCart = () => console.log(`Toggle add cart!`)
+
     return (
         <Modal active={active} toggle={toggle}>
             <Wrapper>
@@ -33,11 +36,17 @@ const ProductModal: React.FC<Props> = ({ data }) => {
                     </SubTitle>
                 </ProductSection>
                 <ProductSection>
-                    {/** aca van los combos */}
-                    <Group></Group>
+                    <Group />
                 </ProductSection>
                 <ProductSection>
-                    {/** aca va el boton */}
+                    <Button 
+                        text="Add to my order" 
+                        price={price.amount} 
+                        toggle={addCart}
+                        color="#5AD88C"
+                    >
+                        <Cart />
+                    </Button>
                 </ProductSection>
             </Wrapper>
         </Modal>

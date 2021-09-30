@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import cart  from "../../assets/icons/cart.svg"
-
 interface ButtonProps {
     enabled?: boolean
 }
@@ -50,14 +48,6 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
 `
-
-export const Cart = styled.img.attrs(() => ({
-    src: cart
-  }))`
-  width: 1rem;
-  height: 1rem;
-  margin-right: .125rem;
-` 
 
 export const Image = styled.img.attrs(props => ({
     src: props.src

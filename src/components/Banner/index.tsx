@@ -1,7 +1,10 @@
-import { Logo, Container, Sign } from "../globalStyles"
-import { Image, Top, Wraper, Button, Bag, Text } from "./styles"
+import Button from "../Button"
+import { Logo, Container, Bag } from "../globalStyles"
+import { Image, Top, Wraper } from "./styles"
 
 const Banner = () => {
+
+    const toggle = () => console.log("Toggle!")
 
     return (
         <Wraper>
@@ -21,15 +24,8 @@ const Banner = () => {
                         borderRadiusBRigth={10}
                         borderRadiusBLeft={10}
                     >
-                        <Button onClick={() => {console.log("cart!")} }>
+                        <Button text="View order" price={1234} toggle={toggle}>
                             <Bag />
-                            <Text flexItem={1.5}>
-                                View order
-                            </Text>
-                            <Text>
-                                <Sign>USD</Sign>
-                                1234
-                            </Text>
                         </Button>
                     </Container>
                 </Container>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import logo from '../assets/logos/logo.svg'
+import cart  from "../assets/icons/cart.svg"
+import bag from '../assets/icons/bag.svg'
 
 interface ContainerProps {
     marginTop?: number,
@@ -81,3 +83,18 @@ export const Divider = styled.div`
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.12);
 `
+
+export const Cart = styled.img.attrs(() => ({
+    src: cart
+  }))`
+  width: 1rem;
+  height: 1rem;
+  margin-right: .125rem;
+` 
+
+export const Bag = styled.img.attrs(() => ({
+    src: bag
+  }))`
+    width: 1rem;
+    height: 1rem;
+` 
