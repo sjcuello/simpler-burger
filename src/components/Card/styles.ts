@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "../globalStyles";
+import { device, Title } from "../globalStyles";
 interface ButtonProps {
     enabled?: boolean
 }
@@ -18,9 +18,21 @@ export const Wraper = styled.div`
 
     @media ${device.mobile} {
         width: 34rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
         grid-template-areas:
             "image info"
             "image buttons"
+    }
+`
+
+export const TitleCard = styled(Title)`
+    @media ${device.mobile} {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        margin: 2rem 2rem 0 2rem;
     }
 `
 
@@ -32,17 +44,14 @@ export const SubTitle = styled.h2`
     font-size: .75rem;
     line-height: .875rem;
     color: #6C707B;
+    @media ${device.mobile} {
+        display: none;
+    }
 `
 
 export const Info = styled.div`
     @media ${device.mobile} {
         grid-area: info;
-    }
-`
-
-export const ImageContainer = styled.div`
-    @media ${device.mobile} {
-        grid-area: image;
     }
 `
 
@@ -53,6 +62,10 @@ export const Buttons = styled.div`
     grid-auto-columns: 1fr 1fr;
     @media ${device.mobile} {
         grid-area: buttons;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
     }
 `
 
@@ -71,6 +84,9 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media ${device.mobile} {
+        transform: scale(1.8);
+    }
 `
 
 export const Image = styled.img.attrs(props => ({
@@ -81,4 +97,9 @@ export const Image = styled.img.attrs(props => ({
     max-height: 9rem;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
+    @media ${device.mobile} {
+        grid-area: image;
+        max-height: none;
+        border-radius: 8px 0 0 8px;
+    }
 `
