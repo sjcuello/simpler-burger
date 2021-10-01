@@ -21,8 +21,8 @@ export const Wrapper = styled.div`
 `
 
 export const Behind = styled.div`
-    display: ${(props: BehindProps) => (props.backgroundFill ? "none" : "flex" )};
-    flex-direction: row;
+    display: ${(props: BehindProps) => (props.backgroundFill ? "none" : "grid" )};
+    grid-template-columns: 1fr 1fr;
     position: absolute;
 `
 export const Front = styled.div`

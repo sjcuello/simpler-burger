@@ -37,7 +37,7 @@ const Banner = () => {
                     <Container
                         backGroundColor="white"
                         heightContainer={4.5}
-                        widthContainer={23}
+                        widthContainer="min(23rem, 70%)"
                         borderRadiusBRigth={10}
                         borderRadiusBLeft={10}
                     >

@@ -12,7 +12,7 @@ interface ContainerProps {
     alignItems?: string,
     backGroundColor?: string
     heightContainer?: number;
-    widthContainer?: number;
+    widthContainer?: string;
     borderRadiusBRigth?: number;
     borderRadiusBLeft?: number;
 }
@@ -29,7 +29,7 @@ export const Container = styled.div`
     align-items: ${(props: ContainerProps) => (props.alignItems ? `${props.alignItems}` : 'flex-start')};
     justify-content: ${(props: ContainerProps) => (props.justifyItem ? `${props.justifyItem}` : 'center')};
     height: ${(props: ContainerProps) => (props.heightContainer ? `${props.heightContainer}rem` : 'auto')};
-    width: ${(props: ContainerProps) => (props.widthContainer ? `${props.widthContainer}rem` : 'auto')};
+    width: ${(props: ContainerProps) => (props.widthContainer ? `${props.widthContainer}` : 'auto')};
     background-color: ${(props: ContainerProps) => (props.backGroundColor ? `${props.backGroundColor}` : 'none')};
     margin-top: ${(props: ContainerProps) => (props.marginTop ? `${props.marginTop}rem` : 0)};
     margin-bottom: ${(props: ContainerProps) => (props.marginBottom ? `${props.marginBottom}rem` : 0)};

@@ -15,7 +15,7 @@ export const ButtonTemplate = styled.button`
     gap: 1fr;
     align-items: center;
     padding: .5rem 1rem;
-    min-width: 21rem;
+    min-width: min(21rem, 85%);
     height: 2.5rem;
     background: ${(props: ButtonProps) => (props.colorButton || "#F01C4F")} ;
     border-radius: .5rem;

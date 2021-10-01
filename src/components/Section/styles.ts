@@ -7,7 +7,7 @@ grid-auto-flow: row;
 
 export const List = styled.div`
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, minmax(16rem,1fr));
     justify-items: center;
     grid-gap: 3rem;
     padding: 2rem 7rem;
