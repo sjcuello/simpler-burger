@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../globalStyles'
 
 export const Wrapper = styled.section`
 display: grid;
@@ -11,6 +12,9 @@ export const List = styled.div`
     justify-items: center;
     grid-gap: 3rem;
     padding: 2rem 7rem;
+    @media ${device.mobile} {
+        padding: 2rem 3rem;
+    }
 `
 
 export const Logo = styled.div`

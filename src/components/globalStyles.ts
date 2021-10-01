@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import logo from '../assets/logos/logo.svg'
-import cart  from "../assets/icons/cart.svg"
+import cart from "../assets/icons/cart.svg"
 import bag from '../assets/icons/bag.svg'
 
 interface ContainerProps {
@@ -17,7 +17,7 @@ interface ContainerProps {
     borderRadiusBLeft?: number;
 }
 
-interface FormProps  {
+interface FormProps {
     column?: boolean
 }
 
@@ -56,7 +56,7 @@ export const Sign = styled.span`
 
 export const Logo = styled.img.attrs(() => ({
     src: logo
-  }))`
+}))`
   width: 10rem;
   height: 5rem;
 `
@@ -64,7 +64,7 @@ export const Logo = styled.img.attrs(() => ({
 export const Form = styled.form`
     display: grid;
     grid-auto-rows: 2rem;
-    grid-template-columns: ${(props: FormProps)=>(props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
+    grid-template-columns: ${(props: FormProps) => (props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
     align-items: start;
 `
 
@@ -89,15 +89,32 @@ export const Divider = styled.div`
 
 export const Cart = styled.img.attrs(() => ({
     src: cart
-  }))`
+}))`
   width: 1rem;
   height: 1rem;
   margin-right: .125rem;
-` 
+`
 
 export const Bag = styled.img.attrs(() => ({
     src: bag
-  }))`
+}))`
     width: 1rem;
     height: 1rem;
-` 
+`
+
+
+/**
+ *  Defining breakpoints' app
+ */
+
+const size = {
+    mobile: '320px',
+    tablet: '744px',
+    laptop: '1440px'
+}
+
+export const device = {
+    mobile: `(max-width: ${size.mobile})`,
+    tablet: `(max-width: ${size.tablet})`,
+    laptop: `(max-width: ${size.laptop})`,
+};

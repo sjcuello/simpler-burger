@@ -12,6 +12,7 @@ interface TextProps {
 export const ButtonTemplate = styled.button`
     display: flex;
     flex-direction: row;
+    align-self: center;
     gap: 1fr;
     align-items: center;
     padding: .5rem 1rem;

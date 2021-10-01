@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../globalStyles";
 interface ButtonProps {
     enabled?: boolean
 }
@@ -14,6 +15,13 @@ export const Wraper = styled.div`
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 
                 0px 4px 25px rgba(0, 0, 0, 0.05), 
                 0px 3px 6px rgba(0, 0, 0, 0.04);
+
+    @media ${device.mobile} {
+        width: 34rem;
+        grid-template-areas:
+            "image info"
+            "image buttons"
+    }
 `
 
 export const SubTitle = styled.h2`
@@ -25,11 +33,27 @@ export const SubTitle = styled.h2`
     line-height: .875rem;
     color: #6C707B;
 `
+
+export const Info = styled.div`
+    @media ${device.mobile} {
+        grid-area: info;
+    }
+`
+
+export const ImageContainer = styled.div`
+    @media ${device.mobile} {
+        grid-area: image;
+    }
+`
+
 export const Buttons = styled.div`
     display: grid;
     grid-auto-flow: column;
     justify-items: center;
     grid-auto-columns: 1fr 1fr;
+    @media ${device.mobile} {
+        grid-area: buttons;
+    }
 `
 
 export const Button = styled.button`
@@ -51,7 +75,7 @@ export const Button = styled.button`
 
 export const Image = styled.img.attrs(props => ({
     src: props.src
-  }))`
+}))`
     width: 100%;
     height: 100%;
     max-height: 9rem;

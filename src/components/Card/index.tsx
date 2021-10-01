@@ -4,7 +4,7 @@ import { Product } from "../../interfaces/Product"
 import { isModalOpen } from "../../recoil/atoms"
 import { Cart, Container, Sign, Title } from "../globalStyles"
 import ProductModal from "../ProductModal"
-import { Wraper, Image, SubTitle, Buttons, Button } from "./styles"
+import { Wraper, Image, SubTitle, Buttons, Button, Info, ImageContainer } from "./styles"
 interface Props {
     data: Product;
 }
@@ -22,15 +22,17 @@ const Card: React.FC<Props> = ({ data }) => {
     const { title, subtitle, image, price } = data
     return (
         <Wraper>
-            <Image src={image} />
-            <Container>
+            <ImageContainer>
+                <Image src={image} />
+            </ImageContainer>
+            <Info>
                 <Title>
                     {title}
                 </Title>
                 <SubTitle>
                     {subtitle}
                 </SubTitle>
-            </Container>
+            </Info>
             <Buttons>
                 <Button>
                     <Sign>{price.currency}</Sign>

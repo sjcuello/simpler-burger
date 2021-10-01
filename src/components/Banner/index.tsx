@@ -3,7 +3,7 @@ import { Order } from "../../interfaces/Oder"
 import { cart, flavour, size } from "../../recoil/atoms"
 import Button from "../Button"
 import { Logo, Container, Bag } from "../globalStyles"
-import { Image, Top, Wraper } from "./styles"
+import { CartContainer, Image, Top, Wraper } from "./styles"
 
 const Banner = () => {
     
@@ -33,8 +33,8 @@ const Banner = () => {
                 >
                     <Logo />
                 </Container>
-                <Container justifyItem="flex-start" alignItems="center">
-                    <Container
+                <CartContainer>
+                    <Container 
                         backGroundColor="white"
                         heightContainer={4.5}
                         widthContainer="min(23rem, 70%)"
@@ -44,8 +44,8 @@ const Banner = () => {
                         <Button text="View order" price={1234} toggle={toggle}>
                             <Bag />
                         </Button>
-                    </Container>
-                </Container>
+                    </Container >
+                </CartContainer>
             </Top>
             <Image />
         </Wraper>
