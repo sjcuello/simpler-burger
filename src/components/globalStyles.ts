@@ -9,6 +9,7 @@ interface ContainerProps {
     marginLeft?: number,
     marginRight?: number,
     justifyItem?: string,
+    alignItems?: string,
     backGroundColor?: string
     heightContainer?: number;
     widthContainer?: number;
@@ -25,6 +26,7 @@ export const Container = styled.div`
     display: flex;
     text-align: center;
     flex-direction: column;
+    align-items: ${(props: ContainerProps) => (props.alignItems ? `${props.alignItems}` : 'flex-start')};
     justify-content: ${(props: ContainerProps) => (props.justifyItem ? `${props.justifyItem}` : 'center')};
     height: ${(props: ContainerProps) => (props.heightContainer ? `${props.heightContainer}rem` : 'auto')};
     width: ${(props: ContainerProps) => (props.widthContainer ? `${props.widthContainer}rem` : 'auto')};

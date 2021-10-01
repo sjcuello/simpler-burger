@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
-import { flavour, itemOrder, size } from "../../recoil/atoms"
+import { cart, flavour, isModalOpen, size } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 import { Order } from "../../interfaces/Oder"
 
@@ -17,13 +17,8 @@ const ProductModal: React.FC<Props> = ({ data }) => {
 
     const { title, subtitle, image, price, additions } = data
 
-    const [active, setActive] = useState(true)
-
-    const toggle = () => {
-        setActive(!active)
-    }
-
-    const [newItemOrder, setNewItemOrder] = useRecoilState(itemOrder)
+    const [modalState, setModalState] = useRecoilState(isModalOpen)
+    const [itemsCart, setItemsCart] = useRecoilState(cart)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
@@ -38,9 +33,9 @@ const ProductModal: React.FC<Props> = ({ data }) => {
                 flavour: flavourSelected
             }
         }
-        setNewItemOrder(order)
+        setItemsCart([...itemsCart, order])
 
-        toggle()
+        setModalState(!modalState)
     }
 
     return (

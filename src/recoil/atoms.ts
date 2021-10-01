@@ -12,11 +12,6 @@ export const isModalOpen = atom({
     default: false
 })
 
-export const itemOrder = atom({
-    key: 'itemOrder',
-    default: {} as Order
-})
-
 export const size = atom({
     key: 'size',
     default: {} as number

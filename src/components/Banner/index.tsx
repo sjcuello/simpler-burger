@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil"
 import { Order } from "../../interfaces/Oder"
-import { cart, flavour, itemOrder, size } from "../../recoil/atoms"
+import { cart, flavour, size } from "../../recoil/atoms"
 import Button from "../Button"
 import { Logo, Container, Bag } from "../globalStyles"
 import { Image, Top, Wraper } from "./styles"
@@ -8,18 +8,15 @@ import { Image, Top, Wraper } from "./styles"
 const Banner = () => {
     
     const [cartState, setCartState] = useRecoilState(cart)
-    const [newItemOrder, setNewItemOrder] = useRecoilState(itemOrder)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
     const toggle = () => {
         console.log(`cartState`, cartState)
-        console.log(`newItemOrder`, newItemOrder)
         console.log(`sizeSelected`, sizeSelected)
         console.log(`flavourSelected`, flavourSelected)
         console.log("Toggle!")
         setTimeout(() => {
             setCartState([])
-            setNewItemOrder({} as Order)
             setSize({} as number)
             setFlavour({} as number)
             console.log(`carrito borrado`)
@@ -36,7 +33,7 @@ const Banner = () => {
                 >
                     <Logo />
                 </Container>
-                <Container>
+                <Container justifyItem="flex-start" alignItems="center">
                     <Container
                         backGroundColor="white"
                         heightContainer={4.5}
