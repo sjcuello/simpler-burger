@@ -199,34 +199,34 @@
     ],
     "flavours": [
         {
-            "id": 1,
+            "id": 8,
             "title": "Cola"
         },
         {
-            "id": 2,
+            "id": 9,
             "title": "Limon"
         },
         {
-            "id": 3,
+            "id": 10,
             "title": "Pomelo"
         },
         {
-            "id": 4,
+            "id": 11,
             "title": "Naranja"
         },
         {
-            "id": 5,
+            "id": 12,
             "title": "Agua"
         }
     ],
     "sizes": [
         {
-            "id": 1,
+            "id": 13,
             "title": "Small",
             "value": 0
         },
         {
-            "id": 2,
+            "id": 14,
             "title": "Big (+USD2.00)",
             "value": 2
         }

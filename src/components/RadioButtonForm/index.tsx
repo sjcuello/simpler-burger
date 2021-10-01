@@ -1,26 +1,37 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useRecoilCallback, useRecoilState } from "recoil";
 import { Item } from "../../interfaces/Item";
+import { flavour, size } from "../../recoil/atoms";
 import { Form, ItemSection } from "../globalStyles";
 import { RadioButton } from "./styles";
 
-
-
 interface Props {
     list: Item[],
-    column?: boolean
+    column?: boolean,
+    sizes?: boolean,
+    flavours?: boolean
 }
 
-const RadioButtonForm: React.FC<Props> = ({list, column}) => {
+const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
 
-    const [itemSelected, setItemSelected] = useState(list[0]?.id)
+    const [itemSelected, setItemSelected] = useState(null)
+
+    const [sizeSelected, setSize] = useRecoilState(size)
+    const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
     const handleChangeItem = (changeEvent: any) => {
         console.log(`changeEvent.target.value`, changeEvent.target.value)
         setItemSelected(changeEvent.target.value)
-        console.log('Seelected: ', itemSelected);
-        
+
+        if (sizes) {
+            setSize(changeEvent.target.value)
+        }
+        if (flavours) {
+            setFlavour(changeEvent.target.value)
+        }
     }
 
+    
     return (
         <Form column={column}>
             {

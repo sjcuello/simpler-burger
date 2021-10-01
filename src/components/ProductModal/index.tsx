@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useRecoilState} from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
@@ -6,8 +6,10 @@ import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
 
-import { cart } from "../../recoil/atoms"
+import { cart, flavour, itemOrder, size } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
+import { Order } from "../../interfaces/Oder"
+import { Item } from "../../interfaces/Item"
 
 
 interface Props {
@@ -24,12 +26,24 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         setActive(!active)
     }
 
-    const [items, setItems] = useRecoilState(cart)
+    // const [items, setItems] = useRecoilState(cart)
+    const [newItemOrder, setNewItemOrder] = useRecoilState(itemOrder)
+    const [sizeSelected, setSize] = useRecoilState(size)
+    const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
     const addCart = () => {
-
-        setItems([...items, data])
+        // setItems([...items, data])
         console.log(`Toggle add cart!`)
+        
+        const order: Order = {
+            product: data,
+            addings: {
+                size: sizeSelected || {} as number,
+                flavour: flavourSelected || {} as number
+            }
+        }
+        setNewItemOrder(order)
+
         toggle()
     }
 

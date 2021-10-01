@@ -1,6 +1,10 @@
+import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 import useFetchFakeApi from "../../hooks/useFetchFakeApi";
 import { Additions } from "../../interfaces/Additions";
 import { Item } from "../../interfaces/Item";
+import { Product } from "../../interfaces/Product";
+import { flavour, size } from "../../recoil/atoms";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
 import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
@@ -19,6 +23,8 @@ const Group: React.FC<Props> = ({ additions }) => {
 
     const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
 
+    
+
     const sections = ():number => {
         const first = (additions.sizes || additions.flavours) ? 1 : 0
         const second = additions.toppings ? 1 : 0
@@ -35,7 +41,7 @@ const Group: React.FC<Props> = ({ additions }) => {
                         <SizeOrder>
                             <TitleSection>Size</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm list={sizes} />
+                            <RadioButtonForm list={sizes} sizes={true}/>
                         </SizeOrder>
                     }
                     {
@@ -43,7 +49,7 @@ const Group: React.FC<Props> = ({ additions }) => {
                         <SodasOrder>
                             <TitleSection>Sodas flavours</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm list={flavours} column={true} />
+                            <RadioButtonForm list={flavours} column={true} flavours={true}/>
                         </SodasOrder>
                     }
 
