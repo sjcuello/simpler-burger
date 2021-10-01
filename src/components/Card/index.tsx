@@ -1,5 +1,7 @@
 import { useState } from "react"
+import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
+import { isModalOpen } from "../../recoil/atoms"
 import { Cart, Container, Sign, Title } from "../globalStyles"
 import ProductModal from "../ProductModal"
 import { Wraper, Image, SubTitle, Buttons, Button } from "./styles"
@@ -10,14 +12,17 @@ interface Props {
 const Card: React.FC<Props> = ({ data }) => {
     const [state, setstate] = useState(false)
 
+    const [modalState, setModalState] = useRecoilState(isModalOpen)
+
     const changeState = () => {
         setstate(!state)
+        setModalState(!modalState)
     }
 
-    const {title, subtitle, image, price} = data
-    return(
+    const { title, subtitle, image, price } = data
+    return (
         <Wraper>
-            <Image src={image}/>
+            <Image src={image} />
             <Container>
                 <Title>
                     {title}
@@ -25,14 +30,14 @@ const Card: React.FC<Props> = ({ data }) => {
                 <SubTitle>
                     {subtitle}
                 </SubTitle>
-            </Container> 
+            </Container>
             <Buttons>
                 <Button>
                     <Sign>{price.currency}</Sign>
                     {price.amount.toFixed(2)}
                 </Button>
-                <Button enabled={true} onClick={() =>changeState()}>
-                    <Cart/>
+                <Button enabled={true} onClick={() => changeState()}>
+                    <Cart />
                     Select
                 </Button>
             </Buttons>
@@ -40,7 +45,7 @@ const Card: React.FC<Props> = ({ data }) => {
                 state && <ProductModal data={data}></ProductModal>
             }
         </Wraper>
-        
+
     )
 }
 

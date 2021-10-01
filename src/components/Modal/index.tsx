@@ -1,22 +1,20 @@
+import { useRecoilState } from "recoil";
+import { isModalOpen } from "../../recoil/atoms";
 import { Container } from "../globalStyles";
 import Portal from "../Portal";
 import { Wrapper, CloseButton, Window } from "./styles";
 
-interface Props {
-    children?: any,
-    toggle?: any,
-    active?: boolean
-}
 
-const Modal: React.FC<Props>= ({ children, toggle, active }) => {
-    
+const Modal: React.FC = ({ children }) => {
+    const [modalState, setModalState] = useRecoilState(isModalOpen)
+
     return (
         <Portal>
             {
-                active &&
+                modalState &&
                 <Wrapper>
                     <Window>
-                        <CloseButton onClick={toggle}>
+                        <CloseButton onClick={() => setModalState(!modalState)}>
                             X
                         </CloseButton>
                         <Container>

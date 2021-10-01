@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react"
-import { useRecoilState} from "recoil"
+import React, { useState } from "react"
+import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
-
-import { cart, flavour, itemOrder, size } from "../../recoil/atoms"
+import { flavour, itemOrder, size } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 import { Order } from "../../interfaces/Oder"
-import { Item } from "../../interfaces/Item"
-
 
 interface Props {
     data: Product;
@@ -26,20 +23,19 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         setActive(!active)
     }
 
-    // const [items, setItems] = useRecoilState(cart)
     const [newItemOrder, setNewItemOrder] = useRecoilState(itemOrder)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
     const addCart = () => {
-        // setItems([...items, data])
+
         console.log(`Toggle add cart!`)
-        
+
         const order: Order = {
             product: data,
             addings: {
-                size: sizeSelected || {} as number,
-                flavour: flavourSelected || {} as number
+                size: sizeSelected,
+                flavour: flavourSelected
             }
         }
         setNewItemOrder(order)
@@ -48,7 +44,7 @@ const ProductModal: React.FC<Props> = ({ data }) => {
     }
 
     return (
-        <Modal active={active} toggle={toggle}>
+        <Modal >
             <Wrapper>
                 <ProductSection>
                     <Image src={image} />
@@ -60,7 +56,7 @@ const ProductModal: React.FC<Props> = ({ data }) => {
                     </SubTitle>
                 </ProductSection>
                 <ProductSection>
-                    <Group additions={additions}/>
+                    <Group additions={additions} />
                 </ProductSection>
                 <ProductSection>
                     <Button

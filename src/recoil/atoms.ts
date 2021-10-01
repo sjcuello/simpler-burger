@@ -7,23 +7,28 @@ export const cart = atom({
     default: [] as Order[]
 })
 
+export const isModalOpen = atom({
+    key: "isModalOpen",
+    default: false
+})
+
 export const itemOrder = atom({
     key: 'itemOrder',
     default: {} as Order
-}) 
+})
 
 export const size = atom({
     key: 'size',
     default: {} as number
-}) 
+})
 
 export const flavour = atom({
     key: 'flavour',
     default: {} as number
-}) 
+})
 
 export const toppings = atom({
     key: 'toppings',
     default: {} as number[]
-}) 
+})
 
