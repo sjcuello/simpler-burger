@@ -1,7 +1,5 @@
 import { useState } from "react"
-import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
-import { isModalOpen } from "../../recoil/atoms"
 import { Cart, Sign, Button, SubTitle} from "../globalStyles"
 import ProductModal from "../ProductModal"
 import { Wraper, Image,  Buttons, Info, TitleCard } from "./styles"
@@ -10,12 +8,10 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ data }) => {
-    const [state, setstate] = useState(false)
 
-    const [modalState, setModalState] = useRecoilState(isModalOpen)
+    const [modalState, setModalState] = useState(false)
 
     const changeState = () => {
-        setstate(!state)
         setModalState(!modalState)
     }
 
@@ -42,7 +38,7 @@ const Card: React.FC<Props> = ({ data }) => {
                 </Button>
             </Buttons>
             {
-                state && <ProductModal data={data}></ProductModal>
+                modalState && <ProductModal data={data} active={modalState} toggle={changeState}></ProductModal>
             }
         </Wraper>
 

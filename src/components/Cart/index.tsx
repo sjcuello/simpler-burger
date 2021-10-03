@@ -1,22 +1,27 @@
+import { useState } from "react"
 import { useRecoilState } from "recoil"
-import { cart, isModalOpen } from "../../recoil/atoms"
+import { cart } from "../../recoil/atoms"
 import { Cart, Sign, Title, Button, SubTitle } from "../globalStyles"
 import Modal from "../Modal"
-import { Buttons, CartItem, InfoContainer, Wrapper, Image, ButtonCart} from "./styles"
+import { Buttons, CartItem, InfoContainer, Wrapper, Image, ButtonCart } from "./styles"
 
 
-const CartModal: React.FC = () => {
-    const [modalState, setModalState] = useRecoilState(isModalOpen)
+interface Props {
+    active: boolean,
+    toggle: any
+}
+
+const CartModal: React.FC<Props> = ({ active, toggle }) => {
+    const [showModal, setShowModal] = useState(false)
     const [cartState, setCartState] = useRecoilState(cart)
-    const toggle = () => {
-        setModalState(!isModalOpen)
-    }
+
 
     const changeState = () => {
         console.log(`changeState`)
+        toggle()
     }
     return (
-        <Modal active={modalState} toggle={toggle}>
+        <Modal active={active} toggle={toggle}>
             <Wrapper>
                 {
                     cartState &&
@@ -38,10 +43,10 @@ const CartModal: React.FC = () => {
                                         <Sign>{item.product.price.currency}</Sign>
                                         {item.product.price.amount.toFixed(2)}
                                     </ButtonCart>
-                                    <ButtonCart 
-                                        enabled={true} 
-                                        backgroundColor="#F01C4F" 
-                                        widthButton="5.4rem" 
+                                    <ButtonCart
+                                        enabled={true}
+                                        backgroundColor="#F01C4F"
+                                        widthButton="5.4rem"
                                         onClick={() => changeState()}
                                     >
                                         <Cart />

@@ -5,22 +5,24 @@ import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
-import { cart, flavour, isModalOpen, size } from "../../recoil/atoms"
+import { cart, flavour, size } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 import { Order } from "../../interfaces/Oder"
 
 interface Props {
-    data: Product;
+    data: Product,
+    active: boolean,
+    toggle: any
 }
 
-const ProductModal: React.FC<Props> = ({ data }) => {
+const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
 
     const { title, subtitle, image, price, additions } = data
 
-    const [modalState, setModalState] = useRecoilState(isModalOpen)
     const [itemsCart, setItemsCart] = useRecoilState(cart)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
+
 
     const addCart = () => {
 
@@ -35,15 +37,11 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         }
         setItemsCart([...itemsCart, order])
 
-        setModalState(!modalState)
-    }
-
-    const toggle = () =>{
-        setModalState(!modalState)
+        toggle()
     }
 
     return (
-        <Modal active={modalState} toggle={toggle}>
+        <Modal active={active} toggle={toggle}>
             <Wrapper>
                 <ProductSection>
                     <Image src={image} />
