@@ -11,7 +11,7 @@ export const Wraper = styled.div`
     max-height: 100%;
     height: 25rem;
     border-radius: 0 0 40px 40px;
-    position: relative;
+    position: sticky;
 `
 
 export const Top = styled.div`

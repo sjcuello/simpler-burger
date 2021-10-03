@@ -24,10 +24,22 @@ export const Window = styled.div`
     min-height: 320px;
     background-color: transparent;
 `
+
+
 export const CloseButton = styled.button`
-    background: grey;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color:rgba(255, 255, 255, 0.7);
+    width: 1.25rem;
+    height: 1.25rem;
+    background: transparent;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.61);
+    border-radius: 50%;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 30px;
+    right: -30px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor: pointer;
 `
 

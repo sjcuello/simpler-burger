@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Container } from "../globalStyles";
 import Portal from "../Portal";
 import { Wrapper, CloseButton, Window } from "./styles";
@@ -9,15 +10,15 @@ interface Props {
 }
 
 const Modal: React.FC<Props> = ({ children, active, toggle }) => {
-
+    
     return (
         <Portal>
             {
                 active &&
                 <Wrapper>
-                    <Window>
+                    <Window >
                         <CloseButton onClick={toggle}>
-                            X
+                            x
                         </CloseButton>
                         <Container>
                             {children}

@@ -162,26 +162,26 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         ::-webkit-scrollbar {
-        width: 6px;
-        height: 10px;
+            width: 6px;
+            height: 10px;
         }
 
         ::-webkit-scrollbar-track {
-        background: grey;
+            background: rgba(0, 0, 0, 0.11);
         }
 
         ::-webkit-scrollbar-thumb {
-        background: blue;
-        left: 65.65%;
-        right: 33.99%;
-        top: 32.1%;
-        bottom: 63.52%;
-        background-color: black;
-        border-radius: 16px;
+            background: blue;
+            left: 65.65%;
+            right: 33.99%;
+            top: 32.1%;
+            bottom: 63.52%;
+            background-color: rgba(125, 125, 125, 0.71);
+            border-radius: 16px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-        background: blue;
+            background: rgba(103, 103, 103, 0.71);
         }
     }
 `

@@ -7,6 +7,28 @@ export const Wrapper = styled.div`
     display: grid;
     grid-gap: 1rem;
     overflow: auto;
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.11);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: blue;
+        left: 65.65%;
+        right: 33.99%;
+        top: 32.1%;
+        bottom: 63.52%;
+        background-color: rgba(125, 125, 125, 0.71);
+        border-radius: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(103, 103, 103, 0.71);
+    }
 `
 
 export const CartItem = styled.div`
