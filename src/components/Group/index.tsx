@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import useFetchFakeApi from "../../hooks/useFetchFakeApi";
-import { Additions } from "../../interfaces/Additions";
+import { Additions, AdditionsSelected } from "../../interfaces/Additions";
 import { Item } from "../../interfaces/Item";
 import { Product } from "../../interfaces/Product";
 import { flavour, size } from "../../recoil/atoms";

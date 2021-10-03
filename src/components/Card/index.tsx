@@ -2,9 +2,9 @@ import { useState } from "react"
 import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
 import { isModalOpen } from "../../recoil/atoms"
-import { Cart, Sign } from "../globalStyles"
+import { Cart, Sign, Button, SubTitle} from "../globalStyles"
 import ProductModal from "../ProductModal"
-import { Wraper, Image, SubTitle, Buttons, Button, Info, TitleCard } from "./styles"
+import { Wraper, Image,  Buttons, Info, TitleCard } from "./styles"
 interface Props {
     data: Product;
 }
@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({ data }) => {
                     <Sign>{price.currency}</Sign>
                     {price.amount.toFixed(2)}
                 </Button>
-                <Button enabled={true} onClick={() => changeState()}>
+                <Button enabled={true} backgroundColor="#5AD88C" onClick={() => changeState()}>
                     <Cart />
                     Select
                 </Button>

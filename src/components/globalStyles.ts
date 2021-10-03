@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import logo from '../assets/logos/logo.svg'
 import cart from "../assets/icons/cart.svg"
 import bag from '../assets/icons/bag.svg'
@@ -21,6 +21,11 @@ interface FormProps {
     column?: boolean
 }
 
+interface ButtonProps {
+    enabled?: boolean,
+    backgroundColor?: string,
+    widthButton?: string
+}
 
 export const Container = styled.div`
     display: flex;
@@ -102,7 +107,6 @@ export const Bag = styled.img.attrs(() => ({
     height: 1rem;
 `
 
-
 /**
  *  Defining breakpoints' app
  */
@@ -118,3 +122,66 @@ export const device = {
     tablet: `(max-width: ${size.tablet})`,
     laptop: `(max-width: ${size.laptop})`,
 };
+
+export const Button = styled.button`
+    background: ${(props: ButtonProps) => (props.backgroundColor ? props.backgroundColor : "#EFF0F2")};
+    border-radius: 3px;
+    border: none;
+    color: ${(props: ButtonProps) => (props.enabled ? "#FFFFFF" : "#000000")};
+    cursor: ${(props: ButtonProps) => (props.enabled ? "pointer" : "default")};
+    height: 2rem;
+    width: ${(props: ButtonProps) => (props.widthButton ? props.widthButton : "7rem")};
+    font-style: normal;
+    font-weight: 600;
+    font-size: .75rem;
+    line-height: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media ${device.mobile} {
+        transform: scale(1.8);
+    }
+`
+
+export const SubTitle = styled.h2`
+    margin: 0 1rem 1rem 1rem;
+    text-align: start;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .75rem;
+    line-height: .875rem;
+    color: #6C707B;
+    @media ${device.mobile} {
+        display: none;
+    }
+`
+
+export const GlobalStyle = createGlobalStyle`
+    body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        ::-webkit-scrollbar {
+        width: 6px;
+        height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background: grey;
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: blue;
+        left: 65.65%;
+        right: 33.99%;
+        top: 32.1%;
+        bottom: 63.52%;
+        background-color: black;
+        border-radius: 16px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        background: blue;
+        }
+    }
+`

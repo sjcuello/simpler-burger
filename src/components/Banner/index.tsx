@@ -1,26 +1,36 @@
+import { useState } from "react"
 import { useRecoilState } from "recoil"
-import { Order } from "../../interfaces/Oder"
-import { cart, flavour, size } from "../../recoil/atoms"
+import { cart, flavour, isModalOpen, size } from "../../recoil/atoms"
 import Button from "../Button"
+import CartModal from "../Cart"
 import { Logo, Container, Bag } from "../globalStyles"
 import { CartContainer, Image, Top, Wraper } from "./styles"
 
 const Banner = () => {
-    
+    const [state, setstate] = useState(false)
     const [cartState, setCartState] = useRecoilState(cart)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
     const toggle = () => {
+        changeState()
         console.log(`cartState`, cartState)
         console.log(`sizeSelected`, sizeSelected)
         console.log(`flavourSelected`, flavourSelected)
         console.log("Toggle!")
-        setTimeout(() => {
-            setCartState([])
-            setSize({} as number)
-            setFlavour({} as number)
-            console.log(`carrito borrado`)
-        }, 4000);
+        // setTimeout(() => {
+        //     setCartState([])
+        //     setSize({} as number)
+        //     setFlavour({} as number)
+        //     console.log(`carrito borrado`)
+        // }, 4000);
+    }
+
+    const [modalState, setModalState] = useRecoilState(isModalOpen)
+
+
+    const changeState = () => {
+        setstate(!state)
+        setModalState(!modalState)
     }
 
     return (
@@ -48,6 +58,9 @@ const Banner = () => {
                 </CartContainer>
             </Top>
             <Image />
+            {
+                state && <CartModal></CartModal>
+            }
         </Wraper>
     )
 }

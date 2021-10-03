@@ -38,8 +38,12 @@ const ProductModal: React.FC<Props> = ({ data }) => {
         setModalState(!modalState)
     }
 
+    const toggle = () =>{
+        setModalState(!modalState)
+    }
+
     return (
-        <Modal >
+        <Modal active={modalState} toggle={toggle}>
             <Wrapper>
                 <ProductSection>
                     <Image src={image} />

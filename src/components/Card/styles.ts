@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { device, Title } from "../globalStyles";
-interface ButtonProps {
-    enabled?: boolean
-}
+
 
 export const Wraper = styled.div`
     display: grid;
@@ -36,19 +34,6 @@ export const TitleCard = styled(Title)`
     }
 `
 
-export const SubTitle = styled.h2`
-    margin: 0 1rem 0 1rem;
-    text-align: start;
-    font-style: normal;
-    font-weight: normal;
-    font-size: .75rem;
-    line-height: .875rem;
-    color: #6C707B;
-    @media ${device.mobile} {
-        display: none;
-    }
-`
-
 export const Info = styled.div`
     @media ${device.mobile} {
         grid-area: info;
@@ -66,26 +51,6 @@ export const Buttons = styled.div`
         justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
-    }
-`
-
-export const Button = styled.button`
-    background: ${(props: ButtonProps) => (props.enabled ? "#5AD88C" : "#EFF0F2")};
-    border-radius: 3px;
-    border: none;
-    color: ${(props: ButtonProps) => (props.enabled ? "#FFFFFF" : "#000000")};
-    cursor: ${(props: ButtonProps) => (props.enabled ? "pointer" : "default")};
-    height: 2rem;
-    width: 7rem;
-    font-style: normal;
-    font-weight: 600;
-    font-size: .75rem;
-    line-height: .75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @media ${device.mobile} {
-        transform: scale(1.8);
     }
 `
 
