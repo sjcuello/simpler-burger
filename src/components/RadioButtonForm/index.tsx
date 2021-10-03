@@ -14,10 +14,12 @@ interface Props {
 
 const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
 
-    const [itemSelected, setItemSelected] = useState(null)
-
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
+
+    const [itemSelected, setItemSelected] = useState(sizes ? sizeSelected : (flavours ? flavourSelected : null))
+    console.log(`itemSelected`, itemSelected)
+    
 
     const handleChangeItem = (changeEvent: any) => {
         console.log(`changeEvent.target.value`, changeEvent.target.value)
@@ -29,6 +31,7 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
         if (flavours) {
             setFlavour(changeEvent.target.value)
         }
+        
     }
 
     
