@@ -36,7 +36,10 @@ export const CartItem = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2,1fr);
-    max-height: 22rem;
+    grid-template-areas: 
+    "image info buttons"
+    "group group group";
+    max-height: 25rem;
     border-radius: .5rem;
     
 `
@@ -47,6 +50,7 @@ export const Buttons = styled.div`
     padding: 1rem;
     grid-gap: .25rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+    grid-area: buttons;
 `
 
 export const ButtonCart = styled(Button)`
@@ -56,6 +60,11 @@ export const ButtonCart = styled(Button)`
 
 export const InfoContainer = styled.div`
     border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+    grid-area: info;
+`
+
+export const GroupContainer = styled.div`
+    grid-area: group;
 `
 
 export const Image = styled.img.attrs(props => ({
@@ -66,4 +75,5 @@ export const Image = styled.img.attrs(props => ({
     max-height: 16rem;
     object-fit: cover;
     border-radius: 8px 0 0 0;
+    grid-area: image;
 `

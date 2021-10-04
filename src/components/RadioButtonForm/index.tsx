@@ -9,15 +9,21 @@ interface Props {
     list: Item[],
     column?: boolean,
     sizes?: boolean,
-    flavours?: boolean
+    flavours?: boolean,
+    selected?: number
 }
 
-const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => {
+const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours, selected }) => {
 
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
     const setNewPriceExtra = useSetRecoilState(priceExtra)
-    const [itemSelected, setItemSelected] = useState(sizes ? sizeSelected : (flavours ? flavourSelected : null))
+
+    const defineInitSelected = () => {
+        return selected || (sizes ? sizeSelected : (flavours ? flavourSelected : null))
+    }
+
+    const [itemSelected, setItemSelected] = useState(defineInitSelected())
 
     const changeExtraPrice = (item: Item) => {
         if (sizes) {
@@ -26,14 +32,17 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => 
     }
 
     const handleChangeItem = (changeEvent: any) => {
-        setItemSelected(changeEvent.target.value)
+        if(!selected) {
+            setItemSelected(changeEvent.target.value)
 
-        if (sizes) {
-            setSize(parseInt(changeEvent.target.value))
+            if (sizes) {
+                setSize(parseInt(changeEvent.target.value))
+            }
+            if (flavours) {
+                setFlavour(parseInt(changeEvent.target.value))
+            }
         }
-        if (flavours) {
-            setFlavour(parseInt(changeEvent.target.value))
-        }
+        
     }
 
     return (

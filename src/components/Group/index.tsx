@@ -1,16 +1,17 @@
 import React from "react";
 import useFetchFakeApi from "../../hooks/useFetchFakeApi";
-import { Additions} from "../../interfaces/Additions";
+import { Additions, AdditionsSelected} from "../../interfaces/Additions";
 import { Item } from "../../interfaces/Item";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
 import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
 
 interface Props {
-    additions: Additions
+    additions: Additions,
+    additionsSelected?: AdditionsSelected
 }
 
-const Group: React.FC<Props> = ({ additions }) => {
+const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
 
     const API = "http://localhost:3001/"
 
@@ -34,7 +35,11 @@ const Group: React.FC<Props> = ({ additions }) => {
                         <SizeOrder>
                             <TitleSection>Size</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm list={sizes} sizes={true}/>
+                            <RadioButtonForm 
+                                list={sizes} 
+                                sizes={true} 
+                                selected={additionsSelected?.size}
+                            />
                         </SizeOrder>
                     }
                     {
@@ -42,7 +47,12 @@ const Group: React.FC<Props> = ({ additions }) => {
                         <SodasOrder>
                             <TitleSection>Sodas flavours</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm list={flavours} column={true} flavours={true}/>
+                            <RadioButtonForm 
+                                list={flavours} 
+                                column={true} 
+                                flavours={true} 
+                                selected={additionsSelected?.flavour}
+                            />
                         </SodasOrder>
                     }
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
+import { useRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
