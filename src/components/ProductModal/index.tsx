@@ -1,5 +1,5 @@
 import React from "react"
-import { useRecoilState, useRecoilValue} from "recoil"
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
@@ -20,16 +20,17 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
     const { title, subtitle, image, price, additions } = data
 
     const [itemsCart, setItemsCart] = useRecoilState(cart)
-    const sizeSelected = useRecoilValue(size)
-    const flavourSelected = useRecoilValue(flavour)
-    const [toppingsSelected, setToppings] = useRecoilState(toppings)
-    const newPriceExtra = useRecoilValue(priceExtra)
+    const [sizeSelected, setSizeSelected] = useRecoilState(size)
+    const [flavourSelected, setFlavourSelected] = useRecoilState(flavour)
+    const [toppingsSelected, setToppingsSelected] = useRecoilState(toppings)
+    const [newPriceExtra, setNewPriceExtra] = useRecoilState(priceExtra)
 
     const getTotal = (): number => {
         return parseFloat((price.amount + newPriceExtra).toFixed(2))
     }
+
     const addCart = () => {
-        
+
         console.log(`Toggle add cart!`)
         const order: Order = {
             product: data,
@@ -41,7 +42,10 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
             total: data.price.amount + newPriceExtra
         }
         setItemsCart([...itemsCart, order])
-
+        setSizeSelected({} as number)
+        setFlavourSelected({} as number)
+        setToppingsSelected([])
+        setNewPriceExtra(0)
         toggle()
     }
 

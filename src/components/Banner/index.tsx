@@ -10,12 +10,12 @@ const Banner = () => {
     const [state, setstate] = useState(false)
     const totalValue = useRecoilValue(cartTotal)
 
-    const toggle = () => {
-        changeState()
-    }
-
     const changeState = () => {
         setstate(!state)
+    }
+
+    const getTotal = (): number => {
+        return parseFloat((totalValue).toFixed(2))
     }
 
     return (
@@ -36,7 +36,7 @@ const Banner = () => {
                         borderRadiusBRigth={10}
                         borderRadiusBLeft={10}
                     >
-                        <Button text="View order" price={totalValue} toggle={toggle}>
+                        <Button text="View order" price={getTotal()} toggle={changeState}>
                             <Bag />
                         </Button>
                     </Container >

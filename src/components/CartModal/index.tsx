@@ -1,4 +1,6 @@
 import { useRecoilValue } from "recoil"
+import useFetchFakeApi from "../../hooks/useFetchFakeApi"
+import { Item } from "../../interfaces/Item"
 import { cart } from "../../recoil/atoms"
 import { Cart, Sign, Title, SubTitle } from "../globalStyles"
 import Modal from "../Modal"
@@ -13,15 +15,24 @@ interface Props {
 const CartModal: React.FC<Props> = ({ active, toggle }) => {
     
     const cartState = useRecoilValue(cart)
+
     const changeState = () => {
         toggle()
     }
+
+    const API = "http://localhost:3001/"
+
+    const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
+    const flavours: Item[] = useFetchFakeApi([], `${API}flavours`)
+    const toppings: Item[] = useFetchFakeApi([], `${API}toppings`)
+
     return (
         <Modal active={active} toggle={toggle}>
             <Wrapper>
                 {
                     cartState &&
                     cartState.map((item, index) => {
+                        console.log(`item`, item)
                         return (
                             <CartItem key={index}>
                                 <Image src={item.product.image} />
@@ -49,6 +60,7 @@ const CartModal: React.FC<Props> = ({ active, toggle }) => {
                                         Select
                                     </ButtonCart>
                                 </Buttons>
+                                
                             </CartItem>
                         )
                     })

@@ -29,10 +29,10 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => 
         setItemSelected(changeEvent.target.value)
 
         if (sizes) {
-            setSize(changeEvent.target.value)
+            setSize(parseInt(changeEvent.target.value))
         }
         if (flavours) {
-            setFlavour(changeEvent.target.value)
+            setFlavour(parseInt(changeEvent.target.value))
         }
     }
 
@@ -46,7 +46,7 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => 
                             <RadioButton
                                 type="radio"
                                 value={item.id}
-                                checked={itemSelected == item.id}
+                                checked={itemSelected === item.id}
                                 onChange={handleChangeItem}
                                 onClick={() => changeExtraPrice(item)}
                             />
