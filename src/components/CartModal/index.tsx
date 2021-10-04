@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil"
 import { cart } from "../../recoil/atoms"
+import CartEmpty from "../CartEmpty"
 import { Cart, Sign, Title, SubTitle } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
@@ -23,7 +24,7 @@ const CartModal: React.FC<Props> = ({ active, toggle }) => {
         <Modal active={active} toggle={toggle}>
             <Wrapper>
                 {
-                    cartState &&
+                    cartState.length ?
                     cartState.map((item, index) => {
                         return (
                             <CartItem key={index}>
@@ -59,6 +60,7 @@ const CartModal: React.FC<Props> = ({ active, toggle }) => {
                             </CartItem>
                         )
                     })
+                    : <CartEmpty toggle={toggle}/>
                 }
             </Wrapper>
         </Modal>
