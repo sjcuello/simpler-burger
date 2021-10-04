@@ -1,5 +1,3 @@
-import {Item} from './Item'
-
 export interface Additions {
     sizes: boolean,
     toppings: boolean,

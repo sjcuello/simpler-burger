@@ -13,9 +13,7 @@ interface Props {
 const CartModal: React.FC<Props> = ({ active, toggle }) => {
     
     const cartState = useRecoilValue(cart)
-
     const changeState = () => {
-        console.log(`changeState`)
         toggle()
     }
     return (

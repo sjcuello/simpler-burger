@@ -18,7 +18,7 @@ export const flavour = atom({
 
 export const toppings = atom({
     key: 'toppings',
-    default: {} as number[]
+    default: [] as number[]
 })
 
 export const priceExtra = atom({

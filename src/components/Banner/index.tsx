@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useRecoilValue } from "recoil"
 import { cartTotal } from "../../recoil/selectors"
 import Button from "../Button"
-import CartModal from "../Cart"
+import CartModal from "../CartModal"
 import { Logo, Container, Bag } from "../globalStyles"
 import { CartContainer, Image, Top, Wraper } from "./styles"
 
