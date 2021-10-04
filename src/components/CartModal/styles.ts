@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Button } from "../globalStyles";
 
 export const Wrapper = styled.div`
-    height: 100vh;
+    height: 90vh;
     width: 36rem;
     display: grid;
     grid-gap: 1rem;
@@ -65,6 +65,12 @@ export const InfoContainer = styled.div`
 
 export const GroupContainer = styled.div`
     grid-area: group;
+`
+
+export const ButtonContainer = styled.div`
+    background-color: #FFFFFF;
+    width: 100%;
+    margin-top: .5rem;
 `
 
 export const Image = styled.img.attrs(props => ({
