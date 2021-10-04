@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil"
+import { useRecoilValue } from "recoil"
 import { cart } from "../../recoil/atoms"
 import { Cart, Sign, Title, SubTitle } from "../globalStyles"
 import Modal from "../Modal"
@@ -12,7 +12,7 @@ interface Props {
 
 const CartModal: React.FC<Props> = ({ active, toggle }) => {
     
-    const [cartState, setCartState] = useRecoilState(cart)
+    const cartState = useRecoilValue(cart)
 
     const changeState = () => {
         console.log(`changeState`)
@@ -54,7 +54,6 @@ const CartModal: React.FC<Props> = ({ active, toggle }) => {
                             </CartItem>
                         )
                     })
-
                 }
             </Wrapper>
         </Modal>

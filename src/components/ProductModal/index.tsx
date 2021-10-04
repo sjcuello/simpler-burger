@@ -20,10 +20,13 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
     const { title, subtitle, image, price, additions } = data
 
     const [itemsCart, setItemsCart] = useRecoilState(cart)
-    const [sizeSelected, setSize] = useRecoilState(size)
-    const [flavourSelected, setFlavour] = useRecoilState(flavour)
-    const [newPriceExtra, setNewPriceExtra] = useRecoilState(priceExtra)
+    const sizeSelected = useRecoilValue(size)
+    const flavourSelected = useRecoilValue(flavour)
+    const newPriceExtra = useRecoilValue(priceExtra)
 
+    const getTotal = (): number => {
+        return parseFloat((price.amount + newPriceExtra).toFixed(2))
+    }
     const addCart = () => {
         
         console.log(`Toggle add cart!`)
@@ -59,7 +62,7 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
                 <ProductSection>
                     <Button
                         text="Add to my order"
-                        price={price.amount + newPriceExtra}
+                        price={getTotal()}
                         toggle={addCart}
                         color="#5AD88C"
                     >

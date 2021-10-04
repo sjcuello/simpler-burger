@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { Item } from "../../interfaces/Item";
 import { flavour, priceExtra, size } from "../../recoil/atoms";
 import { Form, ItemSection } from "../globalStyles";
@@ -16,8 +16,7 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => 
 
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
-    const [newPriceExtra, setNewPriceExtra] = useRecoilState(priceExtra)
-
+    const setNewPriceExtra = useSetRecoilState(priceExtra)
     const [itemSelected, setItemSelected] = useState(sizes ? sizeSelected : (flavours ? flavourSelected : null))
 
     const changeExtraPrice = (item: Item) => {
@@ -27,7 +26,6 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => 
     }
 
     const handleChangeItem = (changeEvent: any) => {
-        console.log(`changeEvent.target.value`, changeEvent.target.value)
         setItemSelected(changeEvent.target.value)
 
         if (sizes) {
