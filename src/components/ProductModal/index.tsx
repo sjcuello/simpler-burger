@@ -1,5 +1,5 @@
 import React from "react"
-import { useRecoilState } from "recoil"
+import { useRecoilState} from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
@@ -23,17 +23,17 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
-
     const addCart = () => {
-
+        
         console.log(`Toggle add cart!`)
-
+        
         const order: Order = {
             product: data,
             addings: {
                 size: sizeSelected,
                 flavour: flavourSelected
-            }
+            },
+            total: data.price.amount
         }
         setItemsCart([...itemsCart, order])
 

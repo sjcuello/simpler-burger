@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useFetchFakeApi = (initialState:any, API:any) => {
-    
+const useFetchFakeApi = (initialState, API) => {
+
     const [data, setData] = useState(initialState);
 
     useEffect(() => {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Container } from "../globalStyles";
 import Portal from "../Portal";
 import { Wrapper, CloseButton, Window } from "./styles";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRecoilCallback, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { Item } from "../../interfaces/Item";
 import { flavour, size } from "../../recoil/atoms";
 import { Form, ItemSection } from "../globalStyles";
@@ -18,9 +18,7 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
 
     const [itemSelected, setItemSelected] = useState(sizes ? sizeSelected : (flavours ? flavourSelected : null))
-    console.log(`itemSelected`, itemSelected)
     
-
     const handleChangeItem = (changeEvent: any) => {
         console.log(`changeEvent.target.value`, changeEvent.target.value)
         setItemSelected(changeEvent.target.value)

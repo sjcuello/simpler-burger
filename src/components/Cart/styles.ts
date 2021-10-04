@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device, Button } from "../globalStyles";
+import { Button } from "../globalStyles";
 
 export const Wrapper = styled.div`
     height: 100vh;

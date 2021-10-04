@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { useRecoilState } from "recoil"
-import { cart, flavour, size } from "../../recoil/atoms"
+import { useRecoilValue } from "recoil"
+import { cartTotal } from "../../recoil/selectors"
 import Button from "../Button"
 import CartModal from "../Cart"
 import { Logo, Container, Bag } from "../globalStyles"
@@ -8,17 +8,11 @@ import { CartContainer, Image, Top, Wraper } from "./styles"
 
 const Banner = () => {
     const [state, setstate] = useState(false)
-    const [cartState, setCartState] = useRecoilState(cart)
-    const [sizeSelected, setSize] = useRecoilState(size)
-    const [flavourSelected, setFlavour] = useRecoilState(flavour)
+    const totalValue = useRecoilValue(cartTotal)
+
     const toggle = () => {
         changeState()
-        console.log(`cartState`, cartState)
-        console.log(`sizeSelected`, sizeSelected)
-        console.log(`flavourSelected`, flavourSelected)
-        console.log("Toggle!")
     }
-
 
     const changeState = () => {
         setstate(!state)
@@ -42,7 +36,7 @@ const Banner = () => {
                         borderRadiusBRigth={10}
                         borderRadiusBLeft={10}
                     >
-                        <Button text="View order" price={1234} toggle={toggle}>
+                        <Button text="View order" price={totalValue} toggle={toggle}>
                             <Bag />
                         </Button>
                     </Container >

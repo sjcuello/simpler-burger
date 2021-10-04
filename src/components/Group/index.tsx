@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { useRecoilState } from "recoil";
+import React from "react";
 import useFetchFakeApi from "../../hooks/useFetchFakeApi";
-import { Additions, AdditionsSelected } from "../../interfaces/Additions";
+import { Additions} from "../../interfaces/Additions";
 import { Item } from "../../interfaces/Item";
-import { Product } from "../../interfaces/Product";
-import { flavour, size } from "../../recoil/atoms";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
 import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
@@ -18,9 +15,7 @@ const Group: React.FC<Props> = ({ additions }) => {
     const API = "http://localhost:3001/"
 
     const toppings: Item[] = useFetchFakeApi([], `${API}toppings`)
-
     const flavours: Item[] = useFetchFakeApi([], `${API}flavours`)
-
     const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
 
     
