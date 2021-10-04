@@ -20,3 +20,8 @@ export const toppings = atom({
     key: 'toppings',
     default: {} as number[]
 })
+
+export const priceExtra = atom({
+    key: 'priceExtra',
+    default: 0 as number
+})

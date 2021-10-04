@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { Item } from "../../interfaces/Item";
-import { flavour, size } from "../../recoil/atoms";
+import { flavour, priceExtra, size } from "../../recoil/atoms";
 import { Form, ItemSection } from "../globalStyles";
 import { RadioButton } from "./styles";
 
@@ -12,13 +12,20 @@ interface Props {
     flavours?: boolean
 }
 
-const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
+const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours }) => {
 
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
+    const [newPriceExtra, setNewPriceExtra] = useRecoilState(priceExtra)
 
     const [itemSelected, setItemSelected] = useState(sizes ? sizeSelected : (flavours ? flavourSelected : null))
-    
+
+    const changeExtraPrice = (item: Item) => {
+        if (sizes) {
+            setNewPriceExtra(item.value || 0)
+        }
+    }
+
     const handleChangeItem = (changeEvent: any) => {
         console.log(`changeEvent.target.value`, changeEvent.target.value)
         setItemSelected(changeEvent.target.value)
@@ -29,10 +36,8 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
         if (flavours) {
             setFlavour(changeEvent.target.value)
         }
-        
     }
 
-    
     return (
         <Form column={column}>
             {
@@ -40,7 +45,13 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
                 list.map((item: Item) => {
                     return (
                         <ItemSection key={item.id}>
-                            <RadioButton type="radio" value={item.id} checked={itemSelected == item.id} onChange={handleChangeItem} />
+                            <RadioButton
+                                type="radio"
+                                value={item.id}
+                                checked={itemSelected == item.id}
+                                onChange={handleChangeItem}
+                                onClick={() => changeExtraPrice(item)}
+                            />
                             {item.title}
                         </ItemSection>
                     )
@@ -48,7 +59,6 @@ const RadioButtonForm: React.FC<Props> = ({ list, column, sizes, flavours}) => {
             }
         </Form>
     )
-
 }
 
 export default RadioButtonForm

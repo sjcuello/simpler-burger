@@ -1,11 +1,11 @@
 import React from "react"
-import { useRecoilState} from "recoil"
+import { useRecoilState, useRecoilValue} from "recoil"
 import { Product } from "../../interfaces/Product"
 import Button from "../Button"
 import { Cart, Title } from "../globalStyles"
 import Group from "../Group"
 import Modal from "../Modal"
-import { cart, flavour, size } from "../../recoil/atoms"
+import { cart, flavour, priceExtra, size } from "../../recoil/atoms"
 import { Wrapper, Image, SubTitle, ProductSection } from "./styles"
 import { Order } from "../../interfaces/Oder"
 
@@ -22,6 +22,7 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
     const [itemsCart, setItemsCart] = useRecoilState(cart)
     const [sizeSelected, setSize] = useRecoilState(size)
     const [flavourSelected, setFlavour] = useRecoilState(flavour)
+    const [newPriceExtra, setNewPriceExtra] = useRecoilState(priceExtra)
 
     const addCart = () => {
         
@@ -33,7 +34,7 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
                 size: sizeSelected,
                 flavour: flavourSelected
             },
-            total: data.price.amount
+            total: data.price.amount + newPriceExtra
         }
         setItemsCart([...itemsCart, order])
 
@@ -58,7 +59,7 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
                 <ProductSection>
                     <Button
                         text="Add to my order"
-                        price={price.amount}
+                        price={price.amount + newPriceExtra}
                         toggle={addCart}
                         color="#5AD88C"
                     >

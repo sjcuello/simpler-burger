@@ -4,5 +4,5 @@ import { Product } from "./Product";
 export interface Order {
     product: Product,
     addings?: AdditionsSelected,
-    total?: number
+    total: number
 }

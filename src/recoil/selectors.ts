@@ -7,7 +7,7 @@ export const cartTotal = selector({
     get: ({get}) => {
         const fullCart: Order[] = get(cart);
         let total = 0
-        fullCart.forEach(order => total += order.product.price.amount);
+        fullCart.forEach(order => total += order.total);
         return total
     },
   });

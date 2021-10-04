@@ -14,11 +14,9 @@ const Group: React.FC<Props> = ({ additions }) => {
 
     const API = "http://localhost:3001/"
 
-    const toppings: Item[] = useFetchFakeApi([], `${API}toppings`)
-    const flavours: Item[] = useFetchFakeApi([], `${API}flavours`)
     const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
-
-    
+    const flavours: Item[] = useFetchFakeApi([], `${API}flavours`)
+    const toppings: Item[] = useFetchFakeApi([], `${API}toppings`)
 
     const sections = ():number => {
         const first = (additions.sizes || additions.flavours) ? 1 : 0
