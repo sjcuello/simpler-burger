@@ -5,4 +5,5 @@ export const Checkbox = styled.input.attrs({
 })`
     cursor: pointer;
     filter: hue-rotate(159deg);
+    align-items: center;
 `

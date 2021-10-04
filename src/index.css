@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Cocogoose_Pro';
+  src: url('assets/fonts/Cocogoose-Pro-Letterpress-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cocogoose_Pro_Block';
+  src: url('assets/fonts/Cocogoose-Pro-Block-Shadow-black-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Antonio';
+  src: url('assets/fonts/Antonio-VariableFont_wght.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

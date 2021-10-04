@@ -27,6 +27,7 @@ export const Divider = styled.div`
 `
 
 export const TitleSection = styled.h1`
+    font-family: 'Antonio', 'Roboto', sans-serif;
     display: flex;
     font-style: normal;
     font-weight: 500;

@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 
 export const SubTitle = styled.h2`
     margin: 0 1rem 1rem 1rem;
+    font-family: 'Roboto', sans-serif;
     text-align: start;
     font-style: normal;
     font-weight: normal;

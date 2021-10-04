@@ -46,6 +46,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     margin: .5rem 1rem .5rem 1rem;
+    font-family: 'Cocogoose_Pro', sans-serif;
     text-align: start;
     font-style: normal;
     font-weight: normal;
@@ -76,8 +77,9 @@ export const Form = styled.form`
 export const ItemSection = styled.span`
     display: flex;
     justify-content: flex-start;
-    align-items: end;
+    align-items: center;
     margin: .5rem 0;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: .75rem;
@@ -145,6 +147,7 @@ export const Button = styled.button`
 
 export const SubTitle = styled.h2`
     margin: 0 1rem 1rem 1rem;
+    font-family: 'Roboto', sans-serif;
     text-align: start;
     font-style: normal;
     font-weight: normal;
