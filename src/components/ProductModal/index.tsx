@@ -30,8 +30,6 @@ const ProductModal: React.FC<Props> = ({ data, active, toggle }) => {
     }
 
     const addCart = () => {
-
-        console.log(`Toggle add cart!`)
         const order: Order = {
             product: data,
             addings: {

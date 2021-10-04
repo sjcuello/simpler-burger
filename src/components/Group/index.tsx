@@ -63,7 +63,11 @@ const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
                 <ToppingsSection>
                     <TitleSection>Toppings</TitleSection>
                     <Divider></Divider>
-                    <CheckboxForm list={toppings} column={true} />
+                    <CheckboxForm 
+                        list={toppings} 
+                        column={true} 
+                        selected={additionsSelected?.toppings}
+                    />
                 </ToppingsSection>
             }
         </ComboGroup>

@@ -7,25 +7,36 @@ import { Checkbox } from "./styles";
 
 interface Props {
     list: Item[],
-    column?: boolean
+    column?: boolean,
+    selected?: number[]
 }
 
-const CheckboxForm: React.FC<Props> = ({ list, column }) => {
+const CheckboxForm: React.FC<Props> = ({ list, column, selected }) => {
 
     const [toppingsSelected, setToppings] = useRecoilState(toppings)
-    const selectedCheckboxes = new Set<number>(toppingsSelected);
 
-    const toggleCheckbox = ({ id }: Item) => {
-        if (selectedCheckboxes.has(id)) {
-            selectedCheckboxes.delete(id);
-        } else {
-            selectedCheckboxes.add(id);
-        }
-        setToppings(Array.from(selectedCheckboxes))
+    const defineInitSelected = () => {
+        return selected || toppingsSelected
     }
 
-    const isChecked = (idCurrent:number) => {
-        return toppingsSelected.includes(idCurrent)
+    const selectedCheckboxes = new Set<number>(defineInitSelected());
+
+    const toggleCheckbox = ({ id }: Item) => {
+        if (!selected) {
+            if (selectedCheckboxes.has(id)) {
+                selectedCheckboxes.delete(id);
+            } else {
+                selectedCheckboxes.add(id);
+            }
+            setToppings(Array.from(selectedCheckboxes))
+        }
+
+    }
+
+    const isChecked = (idCurrent: number) => {
+        return !selected
+            ? toppingsSelected.includes(idCurrent)
+            : selected.includes(idCurrent)
     }
 
     return (

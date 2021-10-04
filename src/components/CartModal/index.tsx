@@ -25,7 +25,6 @@ const CartModal: React.FC<Props> = ({ active, toggle }) => {
                 {
                     cartState &&
                     cartState.map((item, index) => {
-                        console.log(`item`, item)
                         return (
                             <CartItem key={index}>
                                 <Image src={item.product.image} />
