@@ -1,7 +1,6 @@
 import React from "react";
-import useFetchFakeApi from "../../hooks/useFetchFakeApi";
-import { Additions, AdditionsSelected} from "../../interfaces/Additions";
-import { Item } from "../../interfaces/Item";
+import useGetGroup from "../../hooks/useGetGroups";
+import { Additions, AdditionsSelected } from "../../interfaces/Additions";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
 import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
@@ -13,13 +12,9 @@ interface Props {
 
 const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
 
-    const API = "http://localhost:3001/"
+    const group = useGetGroup()
 
-    const sizes: Item[] = useFetchFakeApi([], `${API}sizes`)
-    const flavours: Item[] = useFetchFakeApi([], `${API}flavours`)
-    const toppings: Item[] = useFetchFakeApi([], `${API}toppings`)
-
-    const sections = ():number => {
+    const sections = (): number => {
         const first = (additions.sizes || additions.flavours) ? 1 : 0
         const second = additions.toppings ? 1 : 0
         return first + second
@@ -35,9 +30,9 @@ const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
                         <SizeOrder>
                             <TitleSection>Size</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm 
-                                list={sizes} 
-                                sizes={true} 
+                            <RadioButtonForm
+                                list={group.sizes}
+                                sizes={true}
                                 selected={additionsSelected?.size}
                             />
                         </SizeOrder>
@@ -47,10 +42,10 @@ const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
                         <SodasOrder>
                             <TitleSection>Sodas flavours</TitleSection>
                             <Divider></Divider>
-                            <RadioButtonForm 
-                                list={flavours} 
-                                column={true} 
-                                flavours={true} 
+                            <RadioButtonForm
+                                list={group.flavours}
+                                column={true}
+                                flavours={true}
                                 selected={additionsSelected?.flavour}
                             />
                         </SodasOrder>
@@ -63,9 +58,9 @@ const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
                 <ToppingsSection>
                     <TitleSection>Toppings</TitleSection>
                     <Divider></Divider>
-                    <CheckboxForm 
-                        list={toppings} 
-                        column={true} 
+                    <CheckboxForm
+                        list={group.toppings}
+                        column={true}
                         selected={additionsSelected?.toppings}
                     />
                 </ToppingsSection>

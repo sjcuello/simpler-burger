@@ -10,7 +10,7 @@ interface Props {
 
 
 const Section: React.FC<Props> = ({ link }) => {
-    
+
     const API = "http://localhost:3001/"
 
     const datos: SectionList = useFetchFakeApi([], `${API}${link}`)
@@ -20,11 +20,11 @@ const Section: React.FC<Props> = ({ link }) => {
     return (
         <Wrapper>
             <Logo>
-                <Image src={logo}/>
+                <Image src={logo} />
             </Logo>
             <List>
                 {
-                    products?.length  &&
+                    products?.length &&
                     products.map((product: Product) => {
                         return (
                             <Card key={product.id} data={product} />
