@@ -74,13 +74,6 @@ export const Label = styled.label`
     gap: .25rem
 `
 
-export const Form = styled.form`
-    display: grid;
-    grid-auto-rows: 2rem;
-    grid-template-columns: ${(props: FormProps) => (props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
-    align-items: start;
-`
-
 export const ItemSection = styled.span`
     display: flex;
     justify-content: flex-start;
@@ -193,5 +186,15 @@ export const GlobalStyle = createGlobalStyle`
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(103, 103, 103, 0.71);
         }
+    }
+`
+export const Form = styled.form`
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-template-columns: ${(props: FormProps) => (props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
+    align-items: start;
+    @media ${device.mobile} {
+        flex-direction: row;
+        grid-template-columns: 1fr;
     }
 `
