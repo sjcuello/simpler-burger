@@ -66,6 +66,13 @@ export const Logo = styled.img.attrs(() => ({
   width: 10rem;
   height: 5rem;
 `
+export const Label = styled.label`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .25rem
+`
 
 export const Form = styled.form`
     display: grid;

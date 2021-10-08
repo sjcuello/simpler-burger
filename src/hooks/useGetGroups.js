@@ -17,10 +17,10 @@ const useGetGroup = () => {
     }
 
     useEffect(() => {
-        !sizes.length && fetchAPI(`${API}sizes`,setSize)
-        !flavours.length && fetchAPI(`${API}flavours`,setFlavour)
-        !toppings.length && fetchAPI(`${API}toppings`,setToppings)
-    }, [API]);
+        !sizes.length && fetchAPI(`${API}sizes`, setSize)
+        !flavours.length && fetchAPI(`${API}flavours`, setFlavour)
+        !toppings.length && fetchAPI(`${API}toppings`, setToppings)
+    }, [API, sizes.length, flavours.length, toppings.length,setSize, setFlavour, setToppings]);
 
     return {
         sizes,
