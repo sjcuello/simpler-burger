@@ -23,37 +23,44 @@ const Group: React.FC<Props> = ({ additions, additionsSelected }) => {
     return (
         <ComboGroup sections={sections()}>
 
-            <SizeOrder>
-                <TitleSection>Size</TitleSection>
-                <Divider></Divider>
-                <RadioButtonForm
-                    list={group.sizes}
-                    sizes={true}
-                    selected={additionsSelected?.size}
-                />
-            </SizeOrder>
-            <SodasOrder>
-                <TitleSection>Sodas flavours</TitleSection>
-                <Divider></Divider>
-                <RadioButtonForm
-                    list={group.flavours}
-                    column={true}
-                    flavours={true}
-                    selected={additionsSelected?.flavour}
-                />
-            </SodasOrder>
-            <ToppingsSection>
-                <TitleSection>Toppings</TitleSection>
-                <Divider></Divider>
-                <CheckboxForm
-                    list={group.toppings}
-                    column={true}
-                    selected={additionsSelected?.toppings}
-                />
-            </ToppingsSection>
+            {
+                additions.sizes &&
+                <SizeOrder >
+                    <TitleSection>Size</TitleSection>
+                    <Divider></Divider>
+                    <RadioButtonForm
+                        list={group.sizes}
+                        sizes={true}
+                        selected={additionsSelected?.size}
+                    />
+                </SizeOrder>
+            }
+            {
+                additions.flavours &&
+                <SodasOrder>
+                    <TitleSection>Sodas flavours</TitleSection>
+                    <Divider></Divider>
+                    <RadioButtonForm
+                        list={group.flavours}
+                        column={true}
+                        flavours={true}
+                        selected={additionsSelected?.flavour}
+                    />
+                </SodasOrder>
+            }
+            {
+                additions.toppings &&
+                <ToppingsSection>
+                    <TitleSection>Toppings</TitleSection>
+                    <Divider></Divider>
+                    <CheckboxForm
+                        list={group.toppings}
+                        column={true}
+                        selected={additionsSelected?.toppings}
+                    />
+                </ToppingsSection>
+            }
         </ComboGroup>
-
-
     );
 }
 

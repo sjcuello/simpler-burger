@@ -7,9 +7,8 @@ interface ComboGroupProps {
 
 export const ComboGroup = styled.div`
     display: grid;
-    /* grid-template-rows: ${(props: ComboGroupProps) => (props.sections > 1 ? "1fr 1fr" : "1fr")}; */
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: ${(props: ComboGroupProps) => (props.sections > 1 ? "1fr 1fr" : "1fr")};
     grid-template-areas: 
         "sizes flavours flavours"
         "toppings toppings toppings";
@@ -75,6 +74,8 @@ export const SizeOrder = styled.div`
 `
 
 export const SodasOrder = styled.div`
+    display: flex;
+    flex-direction: column;
     border-radius: 0 .5rem 0 0;
     width:100%;
     padding: 1rem;
@@ -82,6 +83,4 @@ export const SodasOrder = styled.div`
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
     grid-area: flavours;
-    display: flex;
-    flex-direction: column;
 `
