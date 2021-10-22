@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../globalStyles"
 
 interface ComboGroupProps {
     sections: number
@@ -6,10 +7,21 @@ interface ComboGroupProps {
 
 export const ComboGroup = styled.div`
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: ${(props: ComboGroupProps) => (props.sections > 1 ? "1fr 1fr" : "1fr")};
+    grid-template-areas: 
+        "sizes flavours flavours"
+        "toppings toppings toppings";
     width: 100%;
     height: 100%;
+    @media ${device.mobile} {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "sizes   toppings"
+        "flavours toppings"
+        "flavours .";
+    }
 `
 
 export const ComboTop = styled.div`
@@ -44,6 +56,7 @@ export const ToppingsSection = styled.div`
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
+    grid-area: toppings;
 `
 
 export const SizeOrder = styled.div`
@@ -57,13 +70,17 @@ export const SizeOrder = styled.div`
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
+    grid-area: sizes;
 `
 
 export const SodasOrder = styled.div`
+    display: flex;
+    flex-direction: column;
     border-radius: 0 .5rem 0 0;
     width:100%;
     padding: 1rem;
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;    
     box-sizing: border-box; 
+    grid-area: flavours;
 `

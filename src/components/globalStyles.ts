@@ -46,7 +46,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     margin: .5rem 1rem .5rem 1rem;
-    font-family: 'Cocogoose_Pro', sans-serif;
+    font-family: sans-serif;
     text-align: start;
     font-style: normal;
     font-weight: normal;
@@ -66,12 +66,12 @@ export const Logo = styled.img.attrs(() => ({
   width: 10rem;
   height: 5rem;
 `
-
-export const Form = styled.form`
-    display: grid;
-    grid-auto-rows: 2rem;
-    grid-template-columns: ${(props: FormProps) => (props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
-    align-items: start;
+export const Label = styled.label`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .25rem
 `
 
 export const ItemSection = styled.span`
@@ -186,5 +186,15 @@ export const GlobalStyle = createGlobalStyle`
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(103, 103, 103, 0.71);
         }
+    }
+`
+export const Form = styled.form`
+    display: grid;
+    grid-auto-rows: 2rem;
+    grid-template-columns: ${(props: FormProps) => (props.column ? "repeat(auto-fit, minmax(3rem, 1fr))" : "1fr")};
+    align-items: start;
+    @media ${device.mobile} {
+        flex-direction: row;
+        grid-template-columns: 1fr;
     }
 `

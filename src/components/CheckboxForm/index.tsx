@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import { Item } from "../../interfaces/Item";
 import { toppings } from "../../recoil/atoms";
-import { Form, ItemSection } from "../globalStyles";
+import { Form, ItemSection, Label } from "../globalStyles";
 import { Checkbox } from "./styles";
 
 
@@ -49,8 +49,18 @@ const CheckboxForm: React.FC<Props> = ({ list, column, selected }) => {
                             <Checkbox
                                 checked={isChecked(item.id)}
                                 onChange={() => toggleCheckbox(item)}
+                                id={item.id.toString()}
                             />
-                            {item.title}
+                            <Label htmlFor={item.id.toString()}>
+                                {
+                                    isChecked(item.id)
+
+                                        ? <img src='../../assets/icons/checkbox-enabled.svg' alt="enabled" />
+                                        : <img src='../../assets/icons/checkbox-disabled.svg' alt="disabled" />
+                                }
+                                {item.title}
+                            </Label>
+
                         </ItemSection>
                     )
                 })
