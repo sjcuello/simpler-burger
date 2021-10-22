@@ -46,7 +46,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
     margin: .5rem 1rem .5rem 1rem;
-    font-family: 'Cocogoose_Pro', sans-serif;
+    font-family: sans-serif;
     text-align: start;
     font-style: normal;
     font-weight: normal;

@@ -3,7 +3,7 @@ import useGetGroup from "../../hooks/useGetGroups";
 import { Additions, AdditionsSelected } from "../../interfaces/Additions";
 import CheckboxForm from "../CheckboxForm";
 import RadioButtonForm from "../RadioButtonForm";
-import { ComboGroup, ComboTop, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
+import { ComboGroup, Divider, SizeOrder, SodasOrder, TitleSection, ToppingsSection } from "./styles";
 
 interface Props {
     additions: Additions,
